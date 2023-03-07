@@ -1,9 +1,7 @@
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
-            <a href="/">
-                <x-application-logo class="w-20 h-20 fill-current text-gray-500" />
-            </a>
+        <img class="object-contain h-20 w-80 ..." src="{{ asset('images/logo.png') }}">
             Admin Login
         </x-slot>
 
