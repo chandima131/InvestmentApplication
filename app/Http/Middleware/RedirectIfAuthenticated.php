@@ -26,6 +26,9 @@ class RedirectIfAuthenticated
                 if($guard == 'admin'){
                     return redirect(RouteServiceProvider::ADMIN_HOME);
                 }
+                if($guard == 'relationshipmanager'){
+                    return redirect(RouteServiceProvider::RM_HOME);
+                }
                 return redirect(RouteServiceProvider::HOME);
             }
         }

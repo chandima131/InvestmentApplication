@@ -44,6 +44,10 @@ return [
             'driver' => 'session',
             'provider' => 'admins',
         ],
+        'relationshipmanager' => [
+            'driver' => 'session',
+            'provider' => 'relationship_managers',
+        ],
 
     ],
 
@@ -72,6 +76,10 @@ return [
         'admins' => [
             'driver' => 'eloquent',
             'model' => App\Models\Admin::class,
+        ],
+        'relationship_managers' => [
+            'driver' => 'eloquent',
+            'model' => App\Models\RelationshipManager::class,
         ],
 
         // 'users' => [

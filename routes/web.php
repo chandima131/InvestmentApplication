@@ -25,7 +25,7 @@ require __DIR__.'/auth.php';
 
 
 
-// Admin 
+// Admin
 Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
     Route::namespace('Auth')->middleware('guest:admin')->group(function(){
         // login route
@@ -44,7 +44,28 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
     Route::post('logout','Auth\AuthenticatedSessionController@destroy')->name('logout');
 });
 
+// RelationshipManager
+Route::namespace('RelationshipManager')->prefix('relationshipmanager')->name('relationshipmanager.')->group(function(){
+    Route::namespace('Auth')->middleware('guest:admin')->group(function(){
+        // login route
+        Route::get('login','AuthenticatedSessionController@create')->name('login');
+        Route::post('login','AuthenticatedSessionController@store')->name('relationshipmanagerlogin');
+    });
+        Route::middleware('relationshipmanager')->group(function(){
+        Route::get('dashboard','HomeController@index')->name('dashboard');
 
+
+        // Route::get('relationshipmanager-test','HomeController@relationshipmanagerTest')->name('relationshipmanagertest');
+        // Route::get('editor-test','HomeController@editorTest')->name('editortest');
+
+        // Route::resource('posts','PostController');
+
+    });
+    Route::post('logout','Auth\AuthenticatedSessionController@destroy')->name('logout');
+
+    //  Route::get('dashboard','HomeController@index')->name('dashboard');
+    //  Route::post('logout','Auth\AuthenticatedSessionController@destroy')->name('logout');
+});
 
 
 
