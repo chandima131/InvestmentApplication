@@ -9,7 +9,7 @@
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                 <div class="p-6 bg-white border-b border-gray-200">
-                    
+
 
 
     <table class="min-w-full border-collapse block md:table">
@@ -22,7 +22,7 @@
         <tbody class="block md:table-row-group">
             @foreach($posts as $post)
             <tr class="bg-gray-300 border border-grey-500 md:border-none block md:table-row">
-                
+
                 <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
                     {{ $post->title }}</td>
 
@@ -30,8 +30,8 @@
                     <span class="inline-block w-1/3 md:hidden font-bold">Actions</span>
                     <a href="{{ route('admin.posts.edit',$post->id) }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 border border-blue-500 rounded">Edit</a>
                 </td>
-            </tr>    
-            @endforeach      
+            </tr>
+            @endforeach
         </tbody>
     </table>
 

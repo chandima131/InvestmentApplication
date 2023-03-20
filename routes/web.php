@@ -58,10 +58,11 @@ Route::namespace('RelationshipManager')->prefix('relationshipmanager')->name('re
         // Route::get('relationshipmanager-test','HomeController@relationshipmanagerTest')->name('relationshipmanagertest');
         // Route::get('editor-test','HomeController@editorTest')->name('editortest');
 
-        // Route::resource('posts','PostController');
+         Route::resource('investmantideas','InvestmantIdeasController');
 
     });
     Route::post('logout','Auth\AuthenticatedSessionController@destroy')->name('logout');
+
 
     //  Route::get('dashboard','HomeController@index')->name('dashboard');
     //  Route::post('logout','Auth\AuthenticatedSessionController@destroy')->name('logout');
