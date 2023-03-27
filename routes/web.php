@@ -28,51 +28,48 @@ Route::get('/profile', function () {
 });
 require __DIR__.'/auth.php';
 
+ 
 
 
 // Admin
-Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function(){
-    Route::namespace('Auth')->middleware('guest:admin')->group(function(){
+Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
+    Route::namespace('Auth')->middleware('guest:admin')->group(function () {
         // login route
-        Route::get('login','AuthenticatedSessionController@create')->name('login');
-        Route::post('login','AuthenticatedSessionController@store')->name('adminlogin');
+        Route::get('login', 'AuthenticatedSessionController@create')->name('login');
+        Route::post('login', 'AuthenticatedSessionController@store')->name('adminlogin');
     });
-    Route::middleware('admin')->group(function(){
-        Route::get('dashboard','HomeController@index')->name('dashboard');
+    Route::middleware('admin')->group(function () {
+        Route::get('dashboard', 'HomeController@index')->name('dashboard');
 
-        Route::get('admin-test','HomeController@adminTest')->name('admintest');
-        Route::get('editor-test','HomeController@editorTest')->name('editortest');
+        Route::get('admin-test', 'HomeController@adminTest')->name('admintest');
+        Route::get('editor-test', 'HomeController@editorTest')->name('editortest');
 
-        Route::resource('posts','PostController');
-
+        Route::resource('posts', 'PostController');
     });
-    Route::post('logout','Auth\AuthenticatedSessionController@destroy')->name('logout');
+    Route::post('logout', 'Auth\AuthenticatedSessionController@destroy')->name('logout');
 });
 
 // RelationshipManager
-Route::namespace('RelationshipManager')->prefix('relationshipmanager')->name('relationshipmanager.')->group(function(){
-    Route::namespace('Auth')->middleware('guest:admin')->group(function(){
+Route::namespace('RelationshipManager')->prefix('relationshipmanager')->name('relationshipmanager.')->group(function () {
+    Route::namespace('Auth')->middleware('guest:admin')->group(function () {
         // login route
-        Route::get('login','AuthenticatedSessionController@create')->name('login');
-        Route::post('login','AuthenticatedSessionController@store')->name('relationshipmanagerlogin');
+        Route::get('login', 'AuthenticatedSessionController@create')->name('login');
+        Route::post('login', 'AuthenticatedSessionController@store')->name('relationshipmanagerlogin');
     });
-        Route::middleware('relationshipmanager')->group(function(){
-        Route::get('dashboard','HomeController@index')->name('dashboard');
+    Route::middleware('relationshipmanager')->group(function () {
+        // Route::get('dashboard','HomeController@index')->name('dashboard');
 
 
         // Route::get('relationshipmanager-test','HomeController@relationshipmanagerTest')->name('relationshipmanagertest');
-        // Route::get('editor-test','HomeController@editorTest')->name('editortest');
-
-         Route::resource('investmantideas','InvestmantIdeasController');
-
+        Route::get('edit/{client_id}', 'HomeController@edit')->name('edit');
+        Route::get('dashboard', 'HomeController@clients')->name('dashboard');
+        Route::resource('investmantideas', 'InvestmantIdeasController');
+        Route::get('search', 'InvestmantIdeasController@search')->name('seach');
+        Route::put('update/{client_id}', 'HomeController@update')->name('update');
     });
-    Route::post('logout','Auth\AuthenticatedSessionController@destroy')->name('logout');
+    Route::post('logout', 'Auth\AuthenticatedSessionController@destroy')->name('logout');
 
 
     //  Route::get('dashboard','HomeController@index')->name('dashboard');
     //  Route::post('logout','Auth\AuthenticatedSessionController@destroy')->name('logout');
 });
-
-
-
-

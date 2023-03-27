@@ -16,7 +16,8 @@ class CreateInvestmantIdeasTables extends Migration
         Schema::create('investmant_ideas_tables', function (Blueprint $table) {
             $table->id();
             $table->timestamps();
-            $table->string('investmant idea');
+            $table->string('investmant_idea');
+            $table->string('abstract');
             $table->string('product');
             $table->string('risk');
             $table->string('date');
