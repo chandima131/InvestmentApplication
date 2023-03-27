@@ -34,4 +34,10 @@ class HomeController extends Controller
         abort(403);
     }
 
+    public function add_ideas()
+    {
+        // dd(\Auth::guard('admin')->user()->hasRole('editor'));
+        return view('admin.add_ideas');
+    }
+
 }

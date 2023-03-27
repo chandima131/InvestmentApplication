@@ -54,12 +54,114 @@
     </div>
     </section>
 
+    <section id="interface">
+<h3 class="i-name"> &nbsp Administrator Dashboard </h3>
+
+<div class= "values">
+    <div class="board">
+    <h3> Investment Ideas </h3>
+    <div class="table_nav">
+    <!-- <div class="input-group mb-3">
+    <form method="GET">
+  <input type="Search" class="form-control" placeholder="Search Data">
+  <div>
+    <button type="submit" class="btn btn-primary"> Search </button>
+    </form>
+  </div> -->
+<!-- </div> -->
+    <form method="GET">
+        <input type="Search" placeholder="Search Data">
+        <select class="form-select" aria-label="Default select example">
+            <option selected>Risk Type</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+        </select>
+        <select class="form-select" aria-label="Default select example">
+            <option selected>Product Type</option>
+            <option value="1">One</option>
+            <option value="2">Two</option>
+            <option value="3">Three</option>
+        </select>
+    </form>
+    &nbsp; &nbsp;
+    <button class="button1" type="submit"> Search </button>
+
+    &nbsp; &nbsp;
+    <a href="{{ url('/admin/add_ideas')}}"><button class="button2"> Add New Idea </button> </a>
+    </div>
+        <table width="100%">
+            <thead>
+                <tr>
+                    <td> S. No. </td>
+                    <td> Title </td>
+                    <td> Publish Date </td>
+                    <td> Risk Rating </td>
+                    <td> Product Type </td>
+                    <td> Country </td>
+                    <td> Actions </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td> 1</td>
+                    <td> Blockchain </td>
+                    <td> {publish date} </td>
+                    <td> 1 </td>
+                    <td> Equity </td>
+                    <td> USA, Germany, India </td>
+                    <td> <button div="button3"> Edit </button>
+                         <button div="button4"> Delete </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td> 2</td>
+                    <td> Biotech </td>
+                    <td> {publish date} </td>
+                    <td> 3 </td>
+                    <td> Equity </td>
+                    <td> USA, Bermuda, China </td>
+                    <td> <button div="button3"> Edit </button>
+                         <button div="button4"> Delete </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td> 3</td>
+                    <td> IPO EFT </td>
+                    <td> {publish date} </td>
+                    <td> 5 </td>
+                    <td> Equity </td>
+                    <td> USA </td>
+                    <td> <button div="button3"> Edit </button>
+                         <button div="button4"> Delete </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td> 4</td>
+                    <td> Renewable Energy </td>
+                    <td> {publish date} </td>
+                    <td> 3 </td>
+                    <td> Structured Products </td>
+                    <td> USA, GBR, FIN </td>
+                    <td> <button div="button3"> Edit </button>
+                         <button div="button4"> Delete </button>
+                    </td>
+                </tr>
+
+            
+        </table>
+    </div>
+</div>
+
+
+</section>
+
 
         <!-- <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
             where this?
                 <div class="p-6 bg-white border-b border-gray-200">
-                    
+                   where this 
                 </div>
             </div>
         </div> -->
