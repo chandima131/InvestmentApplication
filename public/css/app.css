@@ -188571,3 +188571,11 @@ select {
   }
 }
 
+.imground{
+width:200px
+}
+.nameh1{
+  font-weight: 800;
+  font-size: 25px;
+  text-align: center;
+}
