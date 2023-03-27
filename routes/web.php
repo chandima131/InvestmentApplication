@@ -40,7 +40,7 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
     });
     Route::middleware('admin')->group(function () {
         Route::get('dashboard', 'HomeController@index')->name('dashboard');
-
+        Route::get('add_ideas', 'HomeController@add_ideas') -> name ('add_ideas');
         Route::get('admin-test', 'HomeController@adminTest')->name('admintest');
         Route::get('editor-test', 'HomeController@editorTest')->name('editortest');
 

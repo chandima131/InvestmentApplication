@@ -7,7 +7,7 @@
                 <div class="flex-shrink-0 flex items-center">
                     <a href="{{ route('admin.dashboard') }}">
                         <!-- <x-application-logo class="block h-10 w-auto fill-current text-gray-600" /> -->
-                        <img class="object-contain h-20 w-80 ..." src="{{ asset('images/logo.png') }}">
+                        <img class="object-contain h-20 w-20 ..." src="{{ asset('images/logo.png') }}">
                     </a>
                 </div>
 
