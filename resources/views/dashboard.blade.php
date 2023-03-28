@@ -127,7 +127,99 @@
         </div>
 
 
+<<<<<<< HEAD
     </section>
+=======
+
+    <div class="board">
+    <h3> Accepted Investment Ideas </h3>
+        <table width="100%">
+            <thead>
+                <tr>
+                    <td> Investment Idea </td>
+                    <td> Abstract </td>
+                    <td> Product </td>
+                    <td> Risk </td>
+                    <td> Sector </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td> Adobe After Effects</td>
+                    <td> Sat, 20 Jan 2023 </td>
+                    <td> $80.09 </td>
+                    <td class="status"> Completed </td>
+                </tr>
+                <tr>
+                    <td> Apple </td>
+                    <td> Sun, 21 Jan 2023 </td>
+                    <td> $152.59 </td>
+                    <td class="status"> Completed </td>
+                </tr>
+                <tr>
+                    <td> Nike </td>
+                    <td> Tue, 21 Feb 2023 </td>
+                    <td> $119.00 </td>
+                    <td class="status"> Completed </td>
+                </tr>
+                <tr>
+                    <td> Disney </td>
+                    <td> Fri, 05 March 2023 </td>
+                    <td> $93.36 </td>
+                    <td class="status"> Completed </td>
+                </tr>
+
+            
+        </table>
+    </div>
+
+    <div class="board">
+    <h3> Suggested Investment Ideas </h3>
+        <table width="100%">
+            <thead>
+                <tr>
+                <td> Investment Idea </td>
+                    <td> Abstract </td>
+                    <td> Product </td>
+                    <td> Risk </td>
+                    <td> Sector </td>
+                    <td> Action </td>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td> Adobe After Effects</td>
+                    <td> Sat, 20 Jan 2023 </td>
+                    <td> $80.09 </td>
+                    <td class="status"> Completed </td>
+                </tr>
+                <tr>
+                    <td> Apple </td>
+                    <td> Sun, 21 Jan 2023 </td>
+                    <td> $152.59 </td>
+                    <td class="status"> Completed </td>
+                </tr>
+                <tr>
+                    <td> Nike </td>
+                    <td> Tue, 21 Feb 2023 </td>
+                    <td> $119.00 </td>
+                    <td class="status"> Completed </td>
+                </tr>
+                <tr>
+                    <td> Disney </td>
+                    <td> Fri, 05 March 2023 </td>
+                    <td> $93.36 </td>
+                    <td class="status"> Completed </td>
+                </tr>
+
+            
+        </table>
+    </div>
+</div>
+
+
+</section>
+>>>>>>> c6399864a1cd720778528c79d1a4ac2ce9d8d2fe
 
 
     <!-- <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
