@@ -26,6 +26,10 @@ Route::get('/dashboard', function () {
 Route::get('/profile', function () {
     return view('admin.layouts.profile');
 });
+
+Route::get('/aboutus', function () {
+    return view('aboutus');
+})->middleware(['auth'])->name('aboutus');
 require __DIR__.'/auth.php';
 
 

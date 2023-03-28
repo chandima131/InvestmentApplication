@@ -31,7 +31,7 @@
                                 <path stroke-linecap="round" stroke-linejoin="round" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" />
                             </svg>
 
-                            <a href="#"> Settings </a>
+                            <a href="{{ url('/aboutus') }}"> About Us </a>
                         </li>
                     </ul>
                 </div>
@@ -83,142 +83,72 @@
             </div>
 
 
-
             <div class="board">
-                <h3> Transactions </h3>
+                <h3> Suggested Investment Idea </h3>
                 <table width="100%">
                     <thead>
                         <tr>
-                            <td> Name </td>
-                            <td> Date </td>
-                            <td> Price </td>
-                            <td> Status </td>
+                            <td> Investment Idea </td>
+                            <td> Abstract </td>
+                            <td> Risk Rating </td>
+                            <td> Product type </td>
+                            <td> Major Sector </td>
+                            <td> Action </td>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td> Adobe After Effects</td>
-                            <td> Sat, 20 Jan 2023 </td>
-                            <td> $80.09 </td>
-                            <td class="status"> Completed </td>
-                        </tr>
-                        <tr>
-                            <td> Apple </td>
-                            <td> Sun, 21 Jan 2023 </td>
-                            <td> $152.59 </td>
-                            <td class="status"> Completed </td>
-                        </tr>
-                        <tr>
-                            <td> Nike </td>
-                            <td> Tue, 21 Feb 2023 </td>
-                            <td> $119.00 </td>
-                            <td class="status"> Completed </td>
-                        </tr>
-                        <tr>
-                            <td> Disney </td>
-                            <td> Fri, 05 March 2023 </td>
-                            <td> $93.36 </td>
-                            <td class="status"> Completed </td>
+                            <td> Blockchain</td>
+                            <td> The global market for Blockchain Technology estimated at US$3.4 Billion in the year 2022, is projected to reach a
+                                revised size of US$19.9 Billion by 2026, growing at a CAGR of 43% over the analysis period. Financial institutions
+                                have been spearheading innovations in the Blockchain technology space and technology companies with a
+                                foothold in these companies will do well.
+                            </td>
+                            <td> 1 - Suitable for very conservative investors
+                            </td>
+                            <td> Equity </td>
+                            <td> Technology </td>
+                            <td> <a href="#" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 border border-blue-500 rounded">Accept</a> </td>
+                            <td> <a href="#" class="bg-red-500 hover:bg-blue-700 text-white font-bold py-1 px-2 border border-blue-500 rounded">Delete</a> </td>
                         </tr>
 
 
                 </table>
             </div>
+            <div class="board">
+                <h3> Accpted Investment Idea </h3>
+                <table width="100%">
+                    <thead>
+                        <tr>
+                            <td> Investment Idea </td>
+                            <td> Abstract </td>
+                            <td> Risk Rating </td>
+                            <td> Product type </td>
+                            <td> Major Sector </td>
+                            <td> Status </td>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td> Biotech</td>
+                            <td> The global biotechnology market size was estimated at USD 1,023.92 billion in 2021 and is expected to grow at a compound annual
+                                growth rate (CAGR) of 13.9% from 2022 to 2030, reaching $2.44 trillion by 2028, recording a compound annual growth rate of 7.4%.
+                                The market is driven by strong government support through initiatives aimed at modernization of regulatory framework,
+                                improvements in approval processes & reimbursement policies, as well as standardization of clinical studies.
+                            </td>
+                            <td> 3 - Suitable for moderate investors </td>
+                            <td> Equity </td>
+                            <td> Healthcare </td>
+                            <td class="status"> Accepted </td>
+                        </tr>
+                        <tr>
+
+                </table>
+            </div>
         </div>
-
-
-<<<<<<< HEAD
     </section>
-=======
-
-    <div class="board">
-    <h3> Accepted Investment Ideas </h3>
-        <table width="100%">
-            <thead>
-                <tr>
-                    <td> Investment Idea </td>
-                    <td> Abstract </td>
-                    <td> Product </td>
-                    <td> Risk </td>
-                    <td> Sector </td>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td> Adobe After Effects</td>
-                    <td> Sat, 20 Jan 2023 </td>
-                    <td> $80.09 </td>
-                    <td class="status"> Completed </td>
-                </tr>
-                <tr>
-                    <td> Apple </td>
-                    <td> Sun, 21 Jan 2023 </td>
-                    <td> $152.59 </td>
-                    <td class="status"> Completed </td>
-                </tr>
-                <tr>
-                    <td> Nike </td>
-                    <td> Tue, 21 Feb 2023 </td>
-                    <td> $119.00 </td>
-                    <td class="status"> Completed </td>
-                </tr>
-                <tr>
-                    <td> Disney </td>
-                    <td> Fri, 05 March 2023 </td>
-                    <td> $93.36 </td>
-                    <td class="status"> Completed </td>
-                </tr>
-
-            
-        </table>
     </div>
-
-    <div class="board">
-    <h3> Suggested Investment Ideas </h3>
-        <table width="100%">
-            <thead>
-                <tr>
-                <td> Investment Idea </td>
-                    <td> Abstract </td>
-                    <td> Product </td>
-                    <td> Risk </td>
-                    <td> Sector </td>
-                    <td> Action </td>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td> Adobe After Effects</td>
-                    <td> Sat, 20 Jan 2023 </td>
-                    <td> $80.09 </td>
-                    <td class="status"> Completed </td>
-                </tr>
-                <tr>
-                    <td> Apple </td>
-                    <td> Sun, 21 Jan 2023 </td>
-                    <td> $152.59 </td>
-                    <td class="status"> Completed </td>
-                </tr>
-                <tr>
-                    <td> Nike </td>
-                    <td> Tue, 21 Feb 2023 </td>
-                    <td> $119.00 </td>
-                    <td class="status"> Completed </td>
-                </tr>
-                <tr>
-                    <td> Disney </td>
-                    <td> Fri, 05 March 2023 </td>
-                    <td> $93.36 </td>
-                    <td class="status"> Completed </td>
-                </tr>
-
-            
-        </table>
-    </div>
-</div>
-
-
-</section>
+    </section>
 
 
     <!-- <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
