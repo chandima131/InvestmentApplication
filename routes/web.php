@@ -28,7 +28,7 @@ Route::get('/profile', function () {
 });
 require __DIR__.'/auth.php';
 
- 
+
 
 
 // Admin
@@ -65,6 +65,7 @@ Route::namespace('RelationshipManager')->prefix('relationshipmanager')->name('re
         Route::get('dashboard', 'HomeController@clients')->name('dashboard');
         Route::resource('investmantideas', 'InvestmantIdeasController');
         Route::get('search', 'InvestmantIdeasController@search')->name('seach');
+        Route::get('viewmore/{id}', 'InvestmantIdeasController@viewmore')->name('viewmore');
         Route::put('update/{client_id}', 'HomeController@update')->name('update');
     });
     Route::post('logout', 'Auth\AuthenticatedSessionController@destroy')->name('logout');
