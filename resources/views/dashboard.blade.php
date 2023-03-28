@@ -219,7 +219,6 @@
 
 
 </section>
->>>>>>> c6399864a1cd720778528c79d1a4ac2ce9d8d2fe
 
 
     <!-- <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
