@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Clients;
 use App\Models\InvestmantIdeas;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -40,4 +41,10 @@ class HomeController extends Controller
         $clients->save();
         return redirect('relationshipmanager/dashboard');
     }
+    public function Register_update(Request $request, $id)
+    {
+        $input =$request->all();
+        $input->client_id= Auth::user()->id;
+        $blog =  Clients::create($input);
+        return response()->json($blog, 200);    }
 }

@@ -7,6 +7,7 @@ use App\Http\Requests\Auth\RelationshipManagerLoginRequest;
 use App\Providers\RouteServiceProvider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Clients;
 
 class AuthenticatedSessionController extends Controller
 {
@@ -52,4 +53,11 @@ class AuthenticatedSessionController extends Controller
 
         return redirect('/');
     }
+        public function Register_update(Request $request, $id)
+    {
+        $input =$request->all();
+         $blog =  Clients::create($input);
+         return redirect()->intended(RouteServiceProvider::HOME);
+        }
+
 }

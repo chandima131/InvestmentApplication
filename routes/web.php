@@ -26,9 +26,10 @@ Route::get('/dashboard', function () {
 Route::get('/profile', function () {
     return view('admin.layouts.profile');
 });
+
 require __DIR__.'/auth.php';
 
- 
+
 
 
 // Admin
@@ -55,6 +56,8 @@ Route::namespace('RelationshipManager')->prefix('relationshipmanager')->name('re
         // login route
         Route::get('login', 'AuthenticatedSessionController@create')->name('login');
         Route::post('login', 'AuthenticatedSessionController@store')->name('relationshipmanagerlogin');
+        Route::post('Register_update/{client_id}','AuthenticatedSessionController@Register_update')->name('Register_update');
+
     });
     Route::middleware('relationshipmanager')->group(function () {
         // Route::get('dashboard','HomeController@index')->name('dashboard');
