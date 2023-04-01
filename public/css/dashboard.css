@@ -201,3 +201,9 @@ margin: 30px 0 30px 10px;
   align-items: center;
 }
 
+.Assigned{
+  background: tomato;
+  padding: 5px;
+  color: white;
+  font-weight: 800;
+}

@@ -20,9 +20,10 @@ Route::get('/register', function () {
     return view('auth.register');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth'])->name('dashboard');
+
 Route::get('/profile', function () {
     return view('admin.layouts.profile');
 });
@@ -32,8 +33,17 @@ Route::get('/aboutus', function () {
 })->middleware(['auth'])->name('aboutus');
 require __DIR__.'/auth.php';
 
+//CLient
+Route::namespace('Client')->group(function () {
 
+Route::middleware('auth')->group(function () {
+    Route::get('dashboard', 'HomeController@index')->name('dashboard');
+    Route::get('assigned', 'HomeController@assigned')->name('assigned');
 
+    Route::get('edit/{assign_id}/{status}', 'HomeController@update')->name('edit');
+
+});
+});
 
 // Admin
 Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {

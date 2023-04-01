@@ -46,49 +46,11 @@
     <section id="interface">
         <h3 class="i-name"> &nbsp Client Dashboard </h3>
          <div class="values">
-            <div class="val-box">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <div>
-                    <h2> $632.00 </h2>
-                    <span> Total Balance </span>
-                </div>
-            </div>
-
-            <div class="val-box">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z" />
-                </svg>
-                <div>
-                    <h2> $592.00 </h2>
-                    <span> Total Income </span>
-                </div>
-            </div>
-
-            <div class="val-box">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" />
-                </svg>
-                <div>
-                    <h2> $354.00 </h2>
-                    <span> Total Savings </span>
-                </div>
-            </div>
-
-            <div class="val-box">
-                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-                    <path stroke-linecap="round" stroke-linejoin="round" d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <div>
-                    <h2> $238.00</h2>
-                    <span> Total Expenses </span>
-                </div>
-            </div>
+  
 
 
             <div class="board">
-                <h3> Suggested Investment Idea </h3>
+                <h3> Assigned Investment Idea </h3>
                 <table width="100%">
                     <thead>
                         <tr>
@@ -97,7 +59,7 @@
                             <td> Risk Rating </td>
                             <td> Product type </td>
                             <td> Major Sector </td>
-                            <td> Action </td>
+                            <td> Status </td>
                         </tr>
                     </thead>
                     <tbody>
@@ -111,15 +73,16 @@
                             </td>
                             <td> {{$row ->product}} </td>
                             <td>  {{$row ->instruments}} </td>
-                            <td> <a href={{ route('edit', ['assign_id' => $row->assign_id, 'status' => 1]) }} class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 border border-blue-500 rounded">Accept</a> </td>
-                            <td> <a href={{ route('edit', ['assign_id' => $row->assign_id, 'status' => 2]) }} class="bg-red-500 hover:bg-blue-700 text-white font-bold py-1 px-2 border border-blue-500 rounded">Delete</a> </td>
-                        </tr>
+                            <td>  <button class="Assigned">
+                                Assigned
+                                </button> </td>
+
+                         </tr>
                         @endforeach
 
 
                 </table>
             </div>
-   
             {{-- <div class="board">
                 <h3> Accpted Investment Idea </h3>
                 <table width="100%">

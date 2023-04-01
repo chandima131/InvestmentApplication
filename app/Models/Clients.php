@@ -9,7 +9,7 @@ class Clients extends Model
 {
     protected $table = 'clients';
     protected $primaryKey = 'client_id';
-    protected $fillable = ['client_id','name', 'email', 'age', 'investment_suggestion', 'risk_rate','account_detail','address'];
+    protected $fillable = ['client_id','name', 'email', 'age', 'preferred_product', 'risk_rate','account_detail','address'];
     public $timestamps = false;
 
 

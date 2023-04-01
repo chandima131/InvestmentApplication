@@ -37,34 +37,17 @@
                                     <form method="POST"
                                         action="{{ route('relationshipmanager.Register_update', Auth::user()->id) }}">
                                         @csrf
-                                        <div class="flex">
-                                            <label class="mt-px inline-block pl-[0.15rem] hover:cursor-pointer  "
-                                                for="gender">Gender :</label>
-                                            <div class="flex justify-center  ml-5">
+                                        <div>
+                                            <x-label for="name" :value="__('name')" />
+                                            <x-input id="name" class="block mt-1 w-full" type="text"
+                                                name="name" :value="old('name')" required autofocus />
 
-                                                <div class="mb-[0.125rem] mr-4 inline-block min-h-[1.5rem] pl-[1.5rem]">
-                                                    <input
-                                                        class="relative float-left mt-0.5 mr-1 -ml-[1.5rem] h-5 w-5 appearance-none rounded-full border-2 border-solid border-neutral-300 dark:border-neutral-600 before:pointer-events-none before:absolute before:h-4 before:w-4 before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:shadow-[0px_0px_0px_13px_transparent] before:content-[''] after:absolute after:z-[1] after:block after:h-4 after:w-4 after:rounded-full after:content-[''] checked:border-primary dark:checked:border-primary checked:before:opacity-[0.16] checked:after:absolute checked:after:left-1/2 checked:after:top-1/2 checked:after:h-[0.625rem] checked:after:w-[0.625rem] checked:after:rounded-full checked:after:border-primary checked:after:bg-primary dark:checked:after:border-primary dark:checked:after:bg-primary checked:after:content-[''] checked:after:[transform:translate(-50%,-50%)] hover:cursor-pointer hover:before:opacity-[0.04] hover:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:shadow-none focus:transition-[border-color_0.2s] focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:border-primary dark:checked:focus:border-primary checked:focus:before:scale-100 checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca] checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s]"
-                                                        type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                                                        value="male" />
-                                                    <label class="mt-px inline-block pl-[0.15rem] hover:cursor-pointer"
-                                                        for="inlineRadio1">Male</label>
-                                                </div>
-                                                <div class="mb-[0.125rem] mr-4 inline-block min-h-[1.5rem] pl-[1.5rem]">
-                                                    <input
-                                                        class="relative float-left mt-0.5 mr-1 -ml-[1.5rem] h-5 w-5 appearance-none rounded-full border-2 border-solid border-neutral-300 dark:border-neutral-600 before:pointer-events-none before:absolute before:h-4 before:w-4 before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:shadow-[0px_0px_0px_13px_transparent] before:content-[''] after:absolute after:z-[1] after:block after:h-4 after:w-4 after:rounded-full after:content-[''] checked:border-primary dark:checked:border-primary checked:before:opacity-[0.16] checked:after:absolute checked:after:left-1/2 checked:after:top-1/2 checked:after:h-[0.625rem] checked:after:w-[0.625rem] checked:after:rounded-full checked:after:border-primary checked:after:bg-primary dark:checked:after:border-primary dark:checked:after:bg-primary checked:after:content-[''] checked:after:[transform:translate(-50%,-50%)] hover:cursor-pointer hover:before:opacity-[0.04] hover:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:shadow-none focus:transition-[border-color_0.2s] focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:border-primary dark:checked:focus:border-primary checked:focus:before:scale-100 checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca] checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s]"
-                                                        type="radio" name="inlineRadioOptions" id="inlineRadio2"
-                                                        value="female" />
-                                                    <label class="mt-px inline-block pl-[0.15rem] hover:cursor-pointer"
-                                                        for="inlineRadio2">Female</label>
-                                                </div>
-                                                <input
-                                                    class=" relative float-left mt-0.5 mr-1 -ml-[1.5rem] h-5 w-5 appearance-none rounded-full border-2 border-solid border-neutral-300 dark:border-neutral-600 before:pointer-events-none before:absolute before:h-4 before:w-4 before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:shadow-[0px_0px_0px_13px_transparent] before:content-[''] after:absolute after:z-[1] after:block after:h-4 after:w-4 after:rounded-full after:content-[''] checked:border-primary dark:checked:border-primary checked:before:opacity-[0.16] checked:after:absolute checked:after:left-1/2 checked:after:top-1/2 checked:after:h-[0.625rem] checked:after:w-[0.625rem] checked:after:rounded-full checked:after:border-primary checked:after:bg-primary dark:checked:after:border-primary dark:checked:after:bg-primary checked:after:content-[''] checked:after:[transform:translate(-50%,-50%)] hover:cursor-pointer hover:before:opacity-[0.04] hover:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:shadow-none focus:transition-[border-color_0.2s] focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:border-primary dark:checked:focus:border-primary checked:focus:before:scale-100 checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca] checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s]"
-                                                    type="text" name="client_id" id="inlineRadio2" :value="Auth::user->id"
-                                                    style="display:none" />
+                                        </div>
+                                        <div>
+                                            <x-label for="email" :value="__('email')" />
+                                            <x-input id="email" class="block mt-1 w-full" type="text"
+                                                name="email" :value="old('email')" required autofocus />
 
-
-                                            </div>
                                         </div>
                                         <!-- Email Address -->
                                         <div>
@@ -88,10 +71,10 @@
 
                                         </div>
                                         <div>
-                                            <x-label for="investment_suggestion" :value="__('investment_suggestion')" />
+                                            <x-label for="preferred_product" :value="__('preferred_product')" />
 
-                                            <x-input id="investment_suggestion" class="block mt-1 w-full" type="text"
-                                                name="investment_suggestion" :value="old('investment_suggestion')" required autofocus />
+                                            <x-input id="preferred_product" class="block mt-1 w-full" type="text"
+                                                name="preferred_product" :value="old('preferred_product')" required autofocus />
 
                                         </div>
                                         <div>

@@ -20,7 +20,7 @@ class HomeController extends Controller
     {
 
         $clients = DB::table('clients')
-            ->join('investmant_ideas_tables', 'clients.investment_suggestion', '=', 'investmant_ideas_tables.id') // joining the contacts table , where user_id and contact_user_id are same
+             ->select('clients.*')
             ->get();
 
         return  view('relationshipmanager.dashboard')->with('clients', $clients);
@@ -36,9 +36,13 @@ class HomeController extends Controller
 
     public function update(Request $request, $id)
     {
-        $clients = Clients::where('client_id', $id)->first();
-        $clients->investment_suggestion = $request->id;
-        $clients->save();
+        // $clients = Clients::where('client_id', $id)->first();
+        // $clients->investment_suggestion = ;
+        $assign=DB::table('assign')->insert([
+            "client_id"=> $id,
+            "investmant_idea_id"=>$request->id
+        ]
+        );
         return redirect('relationshipmanager/dashboard');
     }
     public function Register_update(Request $request, $id)
