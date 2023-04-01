@@ -26,9 +26,13 @@ Route::get('/dashboard', function () {
 Route::get('/profile', function () {
     return view('admin.layouts.profile');
 });
+
+Route::get('/aboutus', function () {
+    return view('aboutus');
+})->middleware(['auth'])->name('aboutus');
 require __DIR__.'/auth.php';
 
- 
+
 
 
 // Admin
@@ -56,6 +60,8 @@ Route::namespace('RelationshipManager')->prefix('relationshipmanager')->name('re
         // login route
         Route::get('login', 'AuthenticatedSessionController@create')->name('login');
         Route::post('login', 'AuthenticatedSessionController@store')->name('relationshipmanagerlogin');
+        Route::post('Register_update/{client_id}','AuthenticatedSessionController@Register_update')->name('Register_update');
+
     });
     Route::middleware('relationshipmanager')->group(function () {
         // Route::get('dashboard','HomeController@index')->name('dashboard');
@@ -66,6 +72,7 @@ Route::namespace('RelationshipManager')->prefix('relationshipmanager')->name('re
         Route::get('dashboard', 'HomeController@clients')->name('dashboard');
         Route::resource('investmantideas', 'InvestmantIdeasController');
         Route::get('search', 'InvestmantIdeasController@search')->name('seach');
+        Route::get('viewmore/{id}', 'InvestmantIdeasController@viewmore')->name('viewmore');
         Route::put('update/{client_id}', 'HomeController@update')->name('update');
     });
     Route::post('logout', 'Auth\AuthenticatedSessionController@destroy')->name('logout');

@@ -34,4 +34,12 @@ class InvestmantIdeasController extends RelationshipManagerController
         ->orWhere('product', 'LIKE', '%' . $search_text . '%') ->orWhere('sector', 'LIKE', '%' . $search_text . '%')->get();
         return view('relationshipmanager.investmantideas.search')->with('investmantideas', $investmantideas);
     }
+
+    public function viewmore($id){
+        $investmantideas = InvestmantIdeas::find($id);
+        // return $investmantidea;
+        return view('relationshipmanager.investmantideas.viewmore')->with('investmantideas', $investmantideas);
+
+
+}
 }
