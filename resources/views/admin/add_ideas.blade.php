@@ -1,11 +1,31 @@
 <x-admin-layout>
     <!-- <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            {{ __('What part does this edit?') }}
+            @role('admin')
+                {{ __('Admin Dashboard') }}
+                <a href="{{ route('admin.admintest')}}" class="px-5 py-2 bg-green-400 text-white cursor-pointer">Link</a>
+            @endrole
+
+            @role('editor')
+                {{ __('Editor Dashboard') }}
+                <a href="{{ route('admin.editortest')}}" class="px-5 py-2 bg-green-400 text-white cursor-pointer">Link</a>
+            @endrole
+            
+
+            {{-- check permission --}}
+            @permission('add-post')
+                <button type="button" class="px-5 py-2 bg-green-400 text-white">Add Post</button>
+            @endpermission
+
+            @permission('delete-post')
+                <button type="button" class="px-5 py-2 bg-red-400 text-white">Delete Post</button>
+            @endpermission
+
+            <a href="{{ route('admin.posts.index') }}" class="px-5 py-2 bg-red-400 text-white">Posts</a>
         </h2>
     </x-slot> -->
-    
-    <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
+
+<link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
     <section id="menu">
     <div class="sidebar">
         <section id="menu">
@@ -34,91 +54,97 @@
     </div>
     </section>
 
-<section id="interface">
-<h3 class="i-name"> &nbsp Client Dashboard </h3>
+    <section id="interface">
+<h3 class="i-name"> &nbsp Add New Idea </h3>
 
 <div class= "values">
-    <div class = "val-box">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v12m-3-2.818l.879.659c1.171.879 3.07.879 4.242 0 1.172-.879 1.172-2.303 0-3.182C13.536 12.219 12.768 12 12 12c-.725 0-1.45-.22-2.003-.659-1.106-.879-1.106-2.303 0-3.182s2.9-.879 4.006 0l.415.33M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
-    </svg>
-        <div>
-            <h2> $632.00 </h2>
-            <span> Total Balance </span>
-        </div>
-    </div>
-
-    <div class = "val-box">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18.75a60.07 60.07 0 0115.797 2.101c.727.198 1.453-.342 1.453-1.096V18.75M3.75 4.5v.75A.75.75 0 013 6h-.75m0 0v-.375c0-.621.504-1.125 1.125-1.125H20.25M2.25 6v9m18-10.5v.75c0 .414.336.75.75.75h.75m-1.5-1.5h.375c.621 0 1.125.504 1.125 1.125v9.75c0 .621-.504 1.125-1.125 1.125h-.375m1.5-1.5H21a.75.75 0 00-.75.75v.75m0 0H3.75m0 0h-.375a1.125 1.125 0 01-1.125-1.125V15m1.5 1.5v-.75A.75.75 0 003 15h-.75M15 10.5a3 3 0 11-6 0 3 3 0 016 0zm3 0h.008v.008H18V10.5zm-12 0h.008v.008H6V10.5z" />
-</svg>
-        <div>
-            <h2> $592.00 </h2>
-            <span> Total Income </span>
-        </div>
-    </div>
-
-    <div class = "val-box">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 18L9 11.25l4.306 4.307a11.95 11.95 0 015.814-5.519l2.74-1.22m0 0l-5.94-2.28m5.94 2.28l-2.28 5.941" />
-</svg>
-        <div>
-            <h2> $354.00 </h2>
-            <span> Total Savings </span>
-        </div>
-    </div>
-
-    <div class = "val-box">
-        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
-  <path stroke-linecap="round" stroke-linejoin="round" d="M15 12H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" />
-</svg>
-        <div>
-            <h2> $238.00</h2>
-            <span> Total Expenses </span>
-        </div>
-    </div>
-
-
-
     <div class="board">
-    <h3> Transactions </h3>
-        <table width="100%">
-            <thead>
-                <tr>
-                    <td> Name </td>
-                    <td> Date </td>
-                    <td> Price </td>
-                    <td> Status </td>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td> Adobe After Effects</td>
-                    <td> Sat, 20 Jan 2023 </td>
-                    <td> $80.09 </td>
-                    <td class="status"> Completed </td>
-                </tr>
-                <tr>
-                    <td> Apple </td>
-                    <td> Sun, 21 Jan 2023 </td>
-                    <td> $152.59 </td>
-                    <td class="status"> Completed </td>
-                </tr>
-                <tr>
-                    <td> Nike </td>
-                    <td> Tue, 21 Feb 2023 </td>
-                    <td> $119.00 </td>
-                    <td class="status"> Completed </td>
-                </tr>
-                <tr>
-                    <td> Disney </td>
-                    <td> Fri, 05 March 2023 </td>
-                    <td> $93.36 </td>
-                    <td class="status"> Completed </td>
-                </tr>
+    <h3> Please Enter Following Details </h3>
+    <form method="POST" action="{{ route('admin.save') }}">
+    @csrf
+    @method('put')
+    <table class="add_ideas">
+    <tr>
+      <td>Title:</td>
+      <td><input type="text" name="title" id="title"></td>
+    </tr>
+    <tr>
+      <td>Abstract:</td>
+      <td><textarea name="abstract" id="abstract"> </textarea></td>
+      <td> Expiry Date: </td>
+      <td> <input type="date" name="exp_date" id="exp_date"> </td>
+    </tr>
+    <tr>
+      <td>Created At:</td>
+      <td><input type="date" name="created" id="created"> </td>
+      <td> Updated At: </td>
+      <td> <input type="date" name="updated" id="exp_date"> </td>
+    </tr>
+    <tr>
+        <td> Content: </td>
+        <td><textarea name="content" rows="5" cols="40" id="content"> </textarea></td>
+    </tr>
+    <tr>
+        <td> Risk Rating: </td>
+        <td> <select name="risk" id="risk">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </td>
+        <td> Product Type: </td>
+        <td> <select name="prod_type" id="prod_type">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+        </td>
+    </tr>
+    <tr>
+        <td> Instruments: </td>
+        <td> <input type="text" name="instruments" id="instruments"> </td>
+        <td> Currency: </td>
+        <td> <select name="currency" id="currency">
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+        </td>
+    </tr>
+    <tr>
+        <td> Major Sector: </td>
+        <td> <input type="text" name="maj_sector" id="maj_sector"> </td>
+        <td> Minor Sector: </td>
+        <td> <input type="text" name="min_sector" id="min_sector"> </td>
+    </tr>
+    <tr>
+        <td> Region: </td>
+        <td> <input type="text" name="region" id="region"> </td>
+        <td> Country: </td>
+        <td> <input type="text" name="country" id="country"> </td>
+    </tr>
+  </table>
+  <br>
+  &nbsp<input type="submit" class ="button1" value="Submit">
+</form>
 
-            
-        </table>
+<!-- <form class="grid-form">
+  <div>
+    <label for="firstName">First Name:</label>
+    <input type="text" name="firstName" id="firstName">
+  </div>
+  <div>
+    <label for="lastName">Last Name:</label>
+    <input type="text" name="lastName" id="lastName">
+  </div>
+  <input type="submit" value="Submit">
+</form> -->
+
     </div>
 </div>
 
@@ -126,12 +152,13 @@
 </section>
 
 
-    <!-- <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <!-- <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-            What part is this?
+            where this?
                 <div class="p-6 bg-white border-b border-gray-200">
-                    What New Can I Do right here?
+                   where this 
                 </div>
             </div>
-     </div> -->
+        </div> -->
+    </div>
 </x-admin-layout>

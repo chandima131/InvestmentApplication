@@ -43,7 +43,8 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
         Route::get('add_ideas', 'HomeController@add_ideas') -> name ('add_ideas');
         Route::get('admin-test', 'HomeController@adminTest')->name('admintest');
         Route::get('editor-test', 'HomeController@editorTest')->name('editortest');
-
+        Route::get('dashboard', 'HomeController@ideas')->name('dashboard');
+        Route::put('save','HomeController@save')->name('save');
         Route::resource('posts', 'PostController');
     });
     Route::post('logout', 'Auth\AuthenticatedSessionController@destroy')->name('logout');

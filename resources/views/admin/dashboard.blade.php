@@ -70,8 +70,8 @@
   </div> -->
 <!-- </div> -->
     <form method="GET">
-        <input type="Search" placeholder="Search Data">
-        <select class="form-select" aria-label="Default select example">
+        <input type="Search" size="40" placeholder="Search Data">
+        <!-- <select class="form-select" aria-label="Default select example">
             <option selected>Risk Type</option>
             <option value="1">One</option>
             <option value="2">Two</option>
@@ -82,7 +82,7 @@
             <option value="1">One</option>
             <option value="2">Two</option>
             <option value="3">Three</option>
-        </select>
+        </select> -->
     </form>
     &nbsp; &nbsp;
     <button class="button1" type="submit"> Search </button>
@@ -103,18 +103,20 @@
                 </tr>
             </thead>
             <tbody>
+            @foreach($ideas as $row)
                 <tr>
-                    <td> 1</td>
-                    <td> Blockchain </td>
-                    <td> {publish date} </td>
-                    <td> 1 </td>
-                    <td> Equity </td>
-                    <td> USA, Germany, India </td>
+                    <td> {{$row -> id}}</td>
+                    <td> {{$row -> investmant_idea}} </td>
+                    <td> {{$row -> created_at}} </td>
+                    <td> {{$row -> risk}} </td>
+                    <td> {{$row -> product}} </td>
+                    <td> India </td>
                     <td> <button div="button3"> Edit </button>
                          <button div="button4"> Delete </button>
                     </td>
                 </tr>
-                <tr>
+            @endforeach
+                <!-- <tr>
                     <td> 2</td>
                     <td> Biotech </td>
                     <td> {publish date} </td>
@@ -146,8 +148,8 @@
                     <td> <button div="button3"> Edit </button>
                          <button div="button4"> Delete </button>
                     </td>
-                </tr>
-
+                </tr> -->
+            </tbody>
             
         </table>
     </div>
