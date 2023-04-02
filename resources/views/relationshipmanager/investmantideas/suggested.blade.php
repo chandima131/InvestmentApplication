@@ -1,8 +1,24 @@
 <x-relationshipmanager-layout>
-    <!-- <x-slot name="header">
-
-    </x-slot> -->
-
+    <x-slot name="header">
+        <div>
+            @if(session()->has('Success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{session()->get('Success')}}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            @endif
+            @if(session()->has('delete'))
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                {{session()->get('delete')}}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            @endif
+        </div>
+    </x-slot>
     <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
     <section id="menu">
         <div class="sidebar">
@@ -36,12 +52,26 @@
     </section>
 
     <section id="interface">
-        <h3 class="i-name"> &nbsp Investment Ideas </h3>
+        <h3 class="i-name"> &nbsp Suggested Investment Ideas By Admin </h3>
 
         <div class="py-12">
             <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
                 <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
                     <div class="p-6 bg-white border-b border-gray-200">
+
+                        <form type="get" action="{{url('relationshipmanager/search')}}">
+                            <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+                            <div class="relative">
+                                <div class="absolute inset-y-0 left-0 flex items-center pl-3 pointer-events-none">
+                                    <svg aria-hidden="true" class="w-5 h-5 text-gray-500 dark:text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path>
+                                    </svg>
+                                </div>
+                                <input type="search" id="search" name="query" class="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500" placeholder="          Search Investment ideas, Product types,Risk rating..." required>
+                                <button type="submit" class="text-white absolute right-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button>
+                            </div>
+                            <br>
+                        </form>
 
                         <table class="min-w-full border-collapse block md:table">
                             <thead class="block md:table-header-group">
@@ -53,6 +83,7 @@
                                     <!-- <th class="bg-gray-600 p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Instruments</th> -->
                                     <!-- <th class="bg-gray-600 p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Currency</th> -->
                                     <th class="bg-gray-600 p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Major Sector</th>
+                                    <th class="bg-gray-600 p-2 text-white font-bold md:border md:border-grey-1500 text-left block md:table-cell">Action</th>
                                 </tr>
                             </thead>
                             <tbody class="block md:table-row-group">
@@ -65,15 +96,18 @@
                                     <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"> {{ $row ->product }}</td>
                                     <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"> {{ $row ->sector }}</td>
 
-                                    <!-- <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">
-                    <span class="inline-block w-1/3 md:hidden font-bold">Actions</span>
-                    <a href="{{ route('admin.posts.edit',$row->id) }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 border border-blue-500 rounded">Edit</a>
-                </td> -->
+                                    <td class="p-2 md:border md:border-grey-1500 text-left block md:table-cell">
+                                        <span class="inline-block w-1/3 md:hidden font-bold">Actions</span>
+                                        <div class="inline-flex">
+                                            <a href="{{ url('/relationshipmanager/viewmore/' . $row->id) }}" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-1 px-2 border border-blue-500 rounded">View</a>
+                                            <a href="{{ url('/relationshipmanager/accept/' . $row->id) }}" class="bg-green-500 hover:bg-green-700 text-white font-bold py-1 px-2 border border-green-500 rounded" value="1" name="accept">Accept</a>
+                                            <a href="{{ url('/relationshipmanager/notinteretbyrm/' . $row->id) }}" class="bg-red-500 hover:bg-red-700 text-white font-bold py-1 px-2 border border-red-500 rounded">Delete</a>
+                                        </div>
+                                    </td>
                                 </tr>
                                 @endforeach
                             </tbody>
                         </table>
-
                     </div>
                 </div>
             </div>

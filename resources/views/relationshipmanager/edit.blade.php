@@ -21,6 +21,11 @@
                             </svg>
                             <a href="{{ route('relationshipmanager.dashboard') }}">Explore Clients Profiles </a>
                         </li>
+                        <li> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 15.75l-2.489-2.489m0 0a3.375 3.375 0 10-4.773-4.773 3.375 3.375 0 004.774 4.774zM21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
+                            </svg>
+                            <a href="{{ route('relationshipmanager.suggested') }}"> Explore Investment Ideas </a>
+                        </li>
 
                     </ul>
                 </div>
@@ -40,6 +45,11 @@
                             <p class="font-normal text-gray-700 dark:text-gray-400"><b>Name: </b>{{$clients->name}}</p>
                             <p class="font-normal text-gray-700 dark:text-gray-400"><b>Age: </b>{{$clients->age}}</p>
                             <p class="font-normal text-gray-700 dark:text-gray-400"><b>Risk rate: </b>{{$clients->risk_rate}}</p>
+                            <p class="font-normal text-gray-700 dark:text-gray-400"><b>Gender: </b>Female</p>
+                            <p class="font-normal text-gray-700 dark:text-gray-400"><b>Location: </b>Asia</p>
+                            <p class="font-normal text-gray-700 dark:text-gray-400"><b>Interest Products: </b>Equity, Structured Products</p>
+                            <p class="font-normal text-gray-700 dark:text-gray-400"><b>Interest Currency: </b>USD, Euro</p>
+                            <p class="font-normal text-gray-700 dark:text-gray-400"><b>Already Accepted Investment Ideas: </b>Biotech</p>
                         </a>
                         <div class="flex-col flex py-3">
                             <label class="pb-2 text-gray-700 font-semibold">Investment Suggestion </label>
@@ -49,6 +59,16 @@
                                 <option value="{{$row->id}}">{{$row->investmant_idea}}</option>
                                 @endforeach
                             </select>
+                        </div>
+
+                        <div class="flex-col flex py-3">
+                            <label class="pb-2 text-gray-700 font-semibold">Give More Investment Suggestions </label>
+                            <!-- <select id="id" name="id" class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500">
+                                <option selected disabled>Choose More Investment Ideas for the Client</option>
+                                @foreach($investmantideas as $row)
+                                <option value="{{$row->id}}">{{$row->investmant_idea}}</option>
+                                @endforeach
+                            </select> -->
                         </div>
 
                         <button class="px-4 py-2 rounded text-white inline-block shadow-lg bg-blue-500 hover:bg-blue-600 focus:bg-blue-700" type="submit">Assign Suggestion</button>

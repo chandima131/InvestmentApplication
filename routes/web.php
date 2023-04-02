@@ -66,11 +66,15 @@ Route::namespace('RelationshipManager')->prefix('relationshipmanager')->name('re
 
         // Route::get('relationshipmanager-test','HomeController@relationshipmanagerTest')->name('relationshipmanagertest');
         Route::get('edit/{client_id}', 'HomeController@edit')->name('edit');
+        Route::get('delete/{client_id}', 'HomeController@delete')->name('delete');
         Route::get('dashboard', 'HomeController@clients')->name('dashboard');
         Route::resource('investmantideas', 'InvestmantIdeasController');
         Route::get('search', 'InvestmantIdeasController@search')->name('seach');
         Route::get('viewmore/{id}', 'InvestmantIdeasController@viewmore')->name('viewmore');
         Route::put('update/{client_id}', 'HomeController@update')->name('update');
+        Route::get('suggested', 'InvestmantIdeasController@suggested')->name('suggested');
+        Route::get('accept/{id}', 'InvestmantIdeasController@accept')->name('accept');
+        Route::get('notinteretbyrm/{id}', 'InvestmantIdeasController@notinteretbyrm')->name('notinteretbyrm');
     });
     Route::post('logout', 'Auth\AuthenticatedSessionController@destroy')->name('logout');
 

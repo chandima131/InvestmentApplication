@@ -40,4 +40,11 @@ class HomeController extends Controller
         $clients->save();
         return redirect('relationshipmanager/dashboard');
     }
+
+    public function delete($id)
+    {
+        DB::delete('delete from clients where client_id = ?', [$id]);
+
+        return redirect('relationshipmanager/dashboard')->with('delete', 'Client Successfully Deleted');
+    }
 }
