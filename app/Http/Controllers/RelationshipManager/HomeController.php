@@ -7,6 +7,7 @@ use Illuminate\Http\Request;
 use App\Models\Clients;
 use App\Models\InvestmantIdeas;
 use Illuminate\Support\Facades\DB;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -19,7 +20,7 @@ class HomeController extends Controller
     {
 
         $clients = DB::table('clients')
-            ->join('investmant_ideas_tables', 'clients.investment_suggestion', '=', 'investmant_ideas_tables.id') // joining the contacts table , where user_id and contact_user_id are same
+             ->select('clients.*')
             ->get();
 
         return  view('relationshipmanager.dashboard')->with('clients', $clients);
@@ -35,9 +36,13 @@ class HomeController extends Controller
 
     public function update(Request $request, $id)
     {
-        $clients = Clients::where('client_id', $id)->first();
-        $clients->investment_suggestion = $request->id;
-        $clients->save();
+        // $clients = Clients::where('client_id', $id)->first();
+        // $clients->investment_suggestion = ;
+        $assign=DB::table('assign')->insert([
+            "client_id"=> $id,
+            "investmant_idea_id"=>$request->id
+        ]
+        );
         return redirect('relationshipmanager/dashboard');
     }
 
@@ -47,4 +52,11 @@ class HomeController extends Controller
 
         return redirect('relationshipmanager/dashboard')->with('delete', 'Client Successfully Deleted');
     }
+    
+    public function Register_update(Request $request, $id)
+    {
+        $input =$request->all();
+        $input->client_id= Auth::user()->id;
+        $blog =  Clients::create($input);
+        return response()->json($blog, 200);    }
 }

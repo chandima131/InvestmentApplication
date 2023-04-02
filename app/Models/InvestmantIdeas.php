@@ -10,7 +10,7 @@ class InvestmantIdeas extends Model
     protected $primaryKey = 'id';
     protected $fillable = ['investmant_idea','abstract', 'product', 'risk', 'sector'];
 
-    public function clients(){
-        return $this->hasMany(Clients::class,'investment_suggestion','client_id');
-    }
+    // public function clients(){
+    //     return $this->hasMany(Clients::class,'investment_suggestion','client_id');
+    // }
 }

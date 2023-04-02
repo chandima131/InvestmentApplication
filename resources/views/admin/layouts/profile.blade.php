@@ -4,7 +4,7 @@
             {{ __('Edit profile') }}
         </h2>
     </x-slot>
-   
+
     <div class="py-12">
         <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
             <div class=" overflow-hidden shadow-sm sm:rounded-lg">
@@ -13,7 +13,7 @@
                         <div class=" bg-white overflow-hidden shadow-sm sm:rounded-lg  col-span-2">
                             <div class="p-8">
                                 <div>
-      
+
                                 </div>
                                 <div class="flex items-center justify-center  ">
                                     <div class="rounded-full">
@@ -22,59 +22,68 @@
                                     </div>
                                 </div>
                                 <div class=" ">
-                                  <h1 class="nameh1">
-                                    {{ Auth::user()->name }}
-                                  </h1>
+                                    <h1 class="nameh1">
+                                        {{ Auth::user()->name }}
+                                    </h1>
                                 </div>
-                      
+
                             </div>
 
                         </div>
                         <div class=" bg-white    overflow-hidden shadow-sm sm:rounded-lg  col-span-4 ">
                             <div class="p-8">
-                
+
                                 <div class="p-8">
                                     <form method="POST"
-                                        action="{{ route('relationshipmanager.relationshipmanagerlogin') }}">
+                                        action="{{ route('relationshipmanager.Register_update', Auth::user()->id) }}">
                                         @csrf
-                                        <div class="flex">
-                                            <label class="mt-px inline-block pl-[0.15rem] hover:cursor-pointer  "
-                                                for="inlineRadio2">Gender :</label>
-                                            <div class="flex justify-center  ml-5">
+                                        <div>
+                                            <x-label for="name" :value="__('name')" />
+                                            <x-input id="name" class="block mt-1 w-full" type="text"
+                                                name="name" :value="old('name')" required autofocus />
 
-                                                <div class="mb-[0.125rem] mr-4 inline-block min-h-[1.5rem] pl-[1.5rem]">
-                                                    <input
-                                                        class="relative float-left mt-0.5 mr-1 -ml-[1.5rem] h-5 w-5 appearance-none rounded-full border-2 border-solid border-neutral-300 dark:border-neutral-600 before:pointer-events-none before:absolute before:h-4 before:w-4 before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:shadow-[0px_0px_0px_13px_transparent] before:content-[''] after:absolute after:z-[1] after:block after:h-4 after:w-4 after:rounded-full after:content-[''] checked:border-primary dark:checked:border-primary checked:before:opacity-[0.16] checked:after:absolute checked:after:left-1/2 checked:after:top-1/2 checked:after:h-[0.625rem] checked:after:w-[0.625rem] checked:after:rounded-full checked:after:border-primary checked:after:bg-primary dark:checked:after:border-primary dark:checked:after:bg-primary checked:after:content-[''] checked:after:[transform:translate(-50%,-50%)] hover:cursor-pointer hover:before:opacity-[0.04] hover:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:shadow-none focus:transition-[border-color_0.2s] focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:border-primary dark:checked:focus:border-primary checked:focus:before:scale-100 checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca] checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s]"
-                                                        type="radio" name="inlineRadioOptions" id="inlineRadio1"
-                                                        value="option1" />
-                                                    <label class="mt-px inline-block pl-[0.15rem] hover:cursor-pointer"
-                                                        for="inlineRadio1">Male</label>
-                                                </div>
-                                                <div class="mb-[0.125rem] mr-4 inline-block min-h-[1.5rem] pl-[1.5rem]">
-                                                    <input
-                                                        class="relative float-left mt-0.5 mr-1 -ml-[1.5rem] h-5 w-5 appearance-none rounded-full border-2 border-solid border-neutral-300 dark:border-neutral-600 before:pointer-events-none before:absolute before:h-4 before:w-4 before:scale-0 before:rounded-full before:bg-transparent before:opacity-0 before:shadow-[0px_0px_0px_13px_transparent] before:content-[''] after:absolute after:z-[1] after:block after:h-4 after:w-4 after:rounded-full after:content-[''] checked:border-primary dark:checked:border-primary checked:before:opacity-[0.16] checked:after:absolute checked:after:left-1/2 checked:after:top-1/2 checked:after:h-[0.625rem] checked:after:w-[0.625rem] checked:after:rounded-full checked:after:border-primary checked:after:bg-primary dark:checked:after:border-primary dark:checked:after:bg-primary checked:after:content-[''] checked:after:[transform:translate(-50%,-50%)] hover:cursor-pointer hover:before:opacity-[0.04] hover:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:shadow-none focus:transition-[border-color_0.2s] focus:before:scale-100 focus:before:opacity-[0.12] focus:before:shadow-[0px_0px_0px_13px_rgba(0,0,0,0.6)] focus:before:transition-[box-shadow_0.2s,transform_0.2s] checked:focus:border-primary dark:checked:focus:border-primary checked:focus:before:scale-100 checked:focus:before:shadow-[0px_0px_0px_13px_#3b71ca] checked:focus:before:transition-[box-shadow_0.2s,transform_0.2s]"
-                                                        type="radio" name="inlineRadioOptions" id="inlineRadio2"
-                                                        value="option2" />
-                                                    <label class="mt-px inline-block pl-[0.15rem] hover:cursor-pointer"
-                                                        for="inlineRadio2">Female</label>
-                                                </div>
+                                        </div>
+                                        <div>
+                                            <x-label for="email" :value="__('email')" />
+                                            <x-input id="email" class="block mt-1 w-full" type="text"
+                                                name="email" :value="old('email')" required autofocus />
 
-                                            </div>
                                         </div>
                                         <!-- Email Address -->
                                         <div>
-                                            <x-label for="Date" :value="__('Date of Birth')" />
+                                            <x-label for="address" :value="__('address')" />
+                                            <x-input id="address" class="block mt-1 w-full" type="text"
+                                                name="address" :value="old('address')" required autofocus />
 
-                                            <x-input id="date" class="block mt-1 w-full" type="date"
-                                                name="date" :value="old('DOB')" required autofocus />
                                         </div>
-                                        <!-- Email Address -->
                                         <div>
-                                            <x-label for="Address" :value="__('Address')" />
+                                            <x-label for="age" :value="__('age')" />
 
-                                            <textarea id="Address" class="block mt-1 w-full" name="Address"
-                                                :value="old('address')" required autofocus ></textarea>
+                                            <x-input id="age" class="block mt-1 w-full" type="text"
+                                                name="age" :value="old('age')" required autofocus />
+
                                         </div>
+                                        <div>
+                                            <x-label for="risk_rate" :value="__('risk_rate')" />
+
+                                            <x-input id="risk_rate" class="block mt-1 w-full" type="text"
+                                                name="risk_rate" :value="old('risk_rate')" required autofocus />
+
+                                        </div>
+                                        <div>
+                                            <x-label for="preferred_product" :value="__('preferred_product')" />
+
+                                            <x-input id="preferred_product" class="block mt-1 w-full" type="text"
+                                                name="preferred_product" :value="old('preferred_product')" required autofocus />
+
+                                        </div>
+                                        <div>
+                                            <x-label for="account_detail" :value="__('account_detail')" />
+                                            <x-input id="account_detail" class="block mt-1 w-full" type="text"
+                                                name="account_detail" :value="old('account_detail')" required autofocus />
+
+                                        </div>
+
                                         <x-button class="mt-3">
                                             {{ __('Update profile') }}
                                         </x-button>

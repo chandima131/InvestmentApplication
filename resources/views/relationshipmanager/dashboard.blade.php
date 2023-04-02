@@ -58,7 +58,7 @@
                                     <!-- <th class="bg-gray-600 p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Abstract</th> -->
                                     <th class="bg-gray-600 p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Email</th>
                                     <th class="bg-gray-600 p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Age</th>
-                                    <th class="bg-gray-600 p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Investment Suggestion </th>
+                                    <th class="bg-gray-600 p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Preferred Product </th>
                                     <!-- <th class="bg-gray-600 p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Instruments</th> -->
                                     <!-- <th class="bg-gray-600 p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Currency</th> -->
                                     <th class="bg-gray-600 p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Risk Rate</th>
@@ -70,10 +70,11 @@
                                 @foreach($clients as $row)
                                 <tr class="bg-gray-100 border border-grey-500 md:border-none block md:table-row border-separate border-spacing-2">
 
-                                    <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"> {{ $row ->name }}</td>
-                                    <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"> {{ $row ->email }}</td>
+                                    <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">{{ $row ->name}} </td>
+                                    <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">{{ $row ->email}}</td>
                                     <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"> {{ $row ->age }}</td>
-                                    <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"> {{ $row ->investmant_idea }}</td>
+                                   <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"> {{ $row ->preferred_product}}</td>
+
                                     <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"> {{ $row ->risk_rate }}</td>
                                     <td class="p-2 md:border md:border-grey-1500 text-left block md:table-cell">
                                         <span class="inline-block w-1/3 md:hidden font-bold">Actions</span>

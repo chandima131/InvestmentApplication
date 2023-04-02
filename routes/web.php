@@ -20,9 +20,10 @@ Route::get('/register', function () {
     return view('auth.register');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth'])->name('dashboard');
+
 Route::get('/profile', function () {
     return view('admin.layouts.profile');
 });
@@ -32,8 +33,17 @@ Route::get('/aboutus', function () {
 })->middleware(['auth'])->name('aboutus');
 require __DIR__.'/auth.php';
 
+//CLient
+Route::namespace('Client')->group(function () {
 
+Route::middleware('auth')->group(function () {
+    Route::get('dashboard', 'HomeController@index')->name('dashboard');
+    Route::get('assigned', 'HomeController@assigned')->name('assigned');
 
+    Route::get('edit/{assign_id}/{status}', 'HomeController@update')->name('edit');
+
+});
+});
 
 // Admin
 Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
@@ -47,7 +57,8 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
         Route::get('add_ideas', 'HomeController@add_ideas') -> name ('add_ideas');
         Route::get('admin-test', 'HomeController@adminTest')->name('admintest');
         Route::get('editor-test', 'HomeController@editorTest')->name('editortest');
-
+        Route::get('dashboard', 'HomeController@ideas')->name('dashboard');
+        Route::put('save','HomeController@save')->name('save');
         Route::resource('posts', 'PostController');
     });
     Route::post('logout', 'Auth\AuthenticatedSessionController@destroy')->name('logout');
@@ -59,6 +70,8 @@ Route::namespace('RelationshipManager')->prefix('relationshipmanager')->name('re
         // login route
         Route::get('login', 'AuthenticatedSessionController@create')->name('login');
         Route::post('login', 'AuthenticatedSessionController@store')->name('relationshipmanagerlogin');
+        Route::post('Register_update/{client_id}','AuthenticatedSessionController@Register_update')->name('Register_update');
+
     });
     Route::middleware('relationshipmanager')->group(function () {
         // Route::get('dashboard','HomeController@index')->name('dashboard');

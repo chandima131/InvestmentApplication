@@ -20,8 +20,9 @@ class CreateInvestmantIdeasTables extends Migration
             $table->string('abstract');
             $table->string('product');
             $table->string('risk');
-            $table->string('date');
             $table->integer('rm_status');
+            $table->date('date');
+            $table->string('instruments');
         });
     }
 
