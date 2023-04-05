@@ -83,7 +83,9 @@ Route::namespace('RelationshipManager')->prefix('relationshipmanager')->name('re
         Route::get('dashboard', 'HomeController@clients')->name('dashboard');
         Route::resource('investmantideas', 'InvestmantIdeasController');
         Route::get('search', 'InvestmantIdeasController@search')->name('seach');
+        Route::get('clientSummarySearch', 'HomeController@clientSummarySearch')->name('clientSummarySearch');
         Route::get('viewmore/{id}', 'InvestmantIdeasController@viewmore')->name('viewmore');
+        Route::get('clientsSummary', 'HomeController@clientsSummary')->name('clientsSummary');
         Route::put('update/{client_id}', 'HomeController@update')->name('update');
         Route::get('suggested', 'InvestmantIdeasController@suggested')->name('suggested');
         Route::get('accept/{id}', 'InvestmantIdeasController@accept')->name('accept');

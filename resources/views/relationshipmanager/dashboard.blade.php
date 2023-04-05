@@ -1,14 +1,24 @@
 <x-relationshipmanager-layout>
 
-    <x-slot name="header">
+<x-slot name="header">
+        <div>
+            @if(session()->has('Success'))
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+                {{session()->get('Success')}}
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            @endif
             @if(session()->has('delete'))
-            <div class="alert alert-danger alert-dismissible fade show" role="alert">
+            <div class="alert alert-warning alert-dismissible fade show" role="alert">
                 {{session()->get('delete')}}
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                     <span aria-hidden="true">&times;</span>
                 </button>
             </div>
             @endif
+        </div>
     </x-slot>
 
     <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
@@ -37,6 +47,11 @@
                             </svg>
                             <a href="{{ route('relationshipmanager.suggested') }}"> Explore Suggested Investment Ideas </a>
                         </li>
+                        <li> <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="w-6 h-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M17.982 18.725A7.488 7.488 0 0012 15.75a7.488 7.488 0 00-5.982 2.975m11.963 0a9 9 0 10-11.963 0m11.963 0A8.966 8.966 0 0112 21a8.966 8.966 0 01-5.982-2.275M15 9.75a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            <a href="{{ route('relationshipmanager.clientsSummary') }}">Summary </a>
+                        </li>
 
                     </ul>
                 </div>
@@ -59,10 +74,9 @@
                                     <th class="bg-gray-600 p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Email</th>
                                     <th class="bg-gray-600 p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Age</th>
                                     <th class="bg-gray-600 p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Preferred Product </th>
-                                    <!-- <th class="bg-gray-600 p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Instruments</th> -->
                                     <!-- <th class="bg-gray-600 p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Currency</th> -->
                                     <th class="bg-gray-600 p-2 text-white font-bold md:border md:border-grey-500 text-left block md:table-cell">Risk Rate</th>
-                                    <th class="bg-gray-600 p-2 text-white font-bold md:border md:border-grey-1500 text-left block md:table-cell">Action</th>
+                                    <th class="bg-gray-600 p-2 text-white font-bold md:border md:border-grey-1500 text-left block md:table-cell">View & Assign new Idea</th>
                                     <th class="bg-gray-600 p-2 text-white font-bold md:border md:border-grey-1500 text-left block md:table-cell">Delete Client</th>
                                 </tr>
                             </thead>
@@ -74,7 +88,6 @@
                                     <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell">{{ $row ->email}}</td>
                                     <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"> {{ $row ->age }}</td>
                                    <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"> {{ $row ->preferred_product}}</td>
-
                                     <td class="p-2 md:border md:border-grey-500 text-left block md:table-cell"> {{ $row ->risk_rate }}</td>
                                     <td class="p-2 md:border md:border-grey-1500 text-left block md:table-cell">
                                         <span class="inline-block w-1/3 md:hidden font-bold">Actions</span>
