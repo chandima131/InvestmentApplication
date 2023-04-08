@@ -1,31 +1,9 @@
 <x-admin-layout>
     <!-- <x-slot name="header">
-        <h2 class="font-semibold text-xl text-gray-800 leading-tight">
-            @role('admin')
-                {{ __('Admin Dashboard') }}
-                <a href="{{ route('admin.admintest')}}" class="px-5 py-2 bg-green-400 text-white cursor-pointer">Link</a>
-            @endrole
 
-            @role('editor')
-                {{ __('Editor Dashboard') }}
-                <a href="{{ route('admin.editortest')}}" class="px-5 py-2 bg-green-400 text-white cursor-pointer">Link</a>
-            @endrole
-            
-
-            {{-- check permission --}}
-            @permission('add-post')
-                <button type="button" class="px-5 py-2 bg-green-400 text-white">Add Post</button>
-            @endpermission
-
-            @permission('delete-post')
-                <button type="button" class="px-5 py-2 bg-red-400 text-white">Delete Post</button>
-            @endpermission
-
-            <a href="{{ route('admin.posts.index') }}" class="px-5 py-2 bg-red-400 text-white">Posts</a>
-        </h2>
     </x-slot> -->
 
-<link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
     <section id="menu">
     <div class="sidebar">
         <section id="menu">
@@ -54,7 +32,8 @@
     </div>
     </section>
 
-<section id="interface">
+
+    <section id="interface">
 <h3 class="i-name"> &nbsp Administrator Dashboard </h3>
 
 <div class= "values">
@@ -92,16 +71,16 @@
                 </tr>
             </thead>
             <tbody>
-            @foreach($ideas as $row)
+            @foreach($investmantideas as $row)
                 <tr>
                     <td> {{$row -> id}}</td>
                     <td> {{$row -> investmant_idea}} </td>
                     <td> {{$row -> created_at}} </td>
                     <td> {{$row -> risk}} </td>
                     <td> {{$row -> product}} </td>
-                    <td> {{$row -> Country}} </td> 
-                    <td> <a href="{{ url('/admin/edit/'.$row->id) }}"> <button div="button3"> Edit </button> </a>
-                         <a href="{{ url('/admin/delete/'.$row->id) }}"> <button div="button4"> Delete </button> </a>
+                    <td> {{$row -> Country}} </td>
+                    <td> <button div="button3"> Edit </button>
+                         <button div="button4"> Delete </button>
                     </td>
                 </tr>
             @endforeach
@@ -112,14 +91,4 @@
 </div>
 </section>
 
-
-        <!-- <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
-            <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-            where this?
-                <div class="p-6 bg-white border-b border-gray-200">
-                   where this 
-                </div>
-            </div>
-        </div> -->
-    </div>
 </x-admin-layout>

@@ -59,6 +59,10 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
         Route::get('editor-test', 'HomeController@editorTest')->name('editortest');
         Route::get('dashboard', 'HomeController@ideas')->name('dashboard');
         Route::put('save','HomeController@save')->name('save');
+        Route::get('search_ideas', 'HomeController@search')->name('search');
+        Route::get('delete/{id}', 'HomeController@delete')->name('delete');
+        Route::get('edit/{id}', 'HomeController@edit')->name('edit');
+        Route::put('update/{id}', 'HomeController@update')->name('update');
         Route::resource('posts', 'PostController');
     });
     Route::post('logout', 'Auth\AuthenticatedSessionController@destroy')->name('logout');

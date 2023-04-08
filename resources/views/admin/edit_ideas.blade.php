@@ -59,30 +59,30 @@
 
 <div class= "values">
     <div class="board">
-    <h3> Please Enter Following Details </h3>
-    <form method="POST" action="{{ route('admin.save') }}">
+    <h3> Please Enter Following Details </h3> 
+    <form method="POST" action="{{route('admin.update',$investmantideas->id)}}">
     @csrf
     @method('put')
     <table class="add_ideas">
     <tr>
       <td>Title:</td>
-      <td><input type="text" name="title" id="title"></td>
+      <td><input type="text" name="title" id="title" value="{{ $investmantideas->investmant_idea}}"></td>
     </tr>
     <tr>
       <td>Abstract:</td>
-      <td><textarea name="abstract" id="abstract"> </textarea></td>
+      <td><textarea name="abstract" id="abstract"> {{$investmantideas->abstract}} </textarea></td>
       <td> Expiry Date: </td>
-      <td> <input type="date" name="exp_date" id="exp_date"> </td>
+      <td> <input type="date" name="exp_date" id="exp_date" value="{{ date('Y-m-d', strtotime($investmantideas->expire_at)) }}"> </td>
     </tr>
     <tr>
       <td>Created At:</td>
-      <td><input type="date" name="created" id="created"> </td>
+      <td><input type="date" name="created" id="created" value="{{ date('Y-m-d', strtotime($investmantideas->created_at)) }}"> </td>
       <td> Updated At: </td>
-      <td> <input type="date" name="updated" id="upd_date"> </td>
+      <td> <input type="date" name="updated" id="upd_date" value="{{ date('Y-m-d', strtotime($investmantideas->updated_at)) }}" > </td>
     </tr>
     <tr>
         <td> Content: </td>
-        <td><textarea name="content" rows="5" cols="40" id="content"> </textarea></td>
+        <td><textarea name="content" rows="5" cols="40" id="content"> {{ $investmantideas->content}}</textarea></td>
     </tr>
     <tr>
         <td> Risk Rating: </td>
@@ -106,21 +106,21 @@
     </tr>
     <tr>
         <td> Instruments: </td>
-        <td> <input type="text" name="instruments" id="instruments"> </td>
+        <td> <input type="text" name="instruments" id="instruments" value="{{ $investmantideas->instruments}}"> </td>
         <td> Currency: </td>
-        <td> <input type="text" name="currency" id="currency"> </td>
+        <td> <input type="text" name="currency" id="currency" value="{{ $investmantideas->Currency}}"> </td>
     </tr>
     <tr>
         <td> Major Sector: </td>
-        <td> <input type="text" name="maj_sector" id="maj_sector"> </td>
+        <td> <input type="text" name="maj_sector" id="maj_sector" value="{{ $investmantideas->Major_Sector}}"> </td>
         <td> Minor Sector: </td>
-        <td> <input type="text" name="min_sector" id="min_sector"> </td>
+        <td> <input type="text" name="min_sector" id="min_sector" value="{{ $investmantideas->Minor_Sector}}"> </td>
     </tr>
     <tr>
         <td> Region: </td>
-        <td> <input type="text" name="region" id="region"> </td>
+        <td> <input type="text" name="region" id="region" value="{{ $investmantideas->Region}}"> </td>
         <td> Country: </td>
-        <td> <input type="text" name="country" id="country"> </td>
+        <td> <input type="text" name="country" id="country" value="{{ $investmantideas->Country}}"> </td>
     </tr>
   </table>
   <br>
