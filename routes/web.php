@@ -62,8 +62,12 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function () {
         Route::get('search_ideas', 'HomeController@search')->name('search');
         Route::get('delete/{id}', 'HomeController@delete')->name('delete');
         Route::get('edit/{id}', 'HomeController@edit')->name('edit');
+        Route::get('view/{id}', 'HomeController@view')->name('view');
         Route::put('update/{id}', 'HomeController@update')->name('update');
         Route::resource('posts', 'PostController');
+        //Route::get('RiskOptions','HomeController@getRiskOptions'->name('RiskOptions'));
+        // Route::get('admin/dropdown', 'HomeController@dropdown')->name('dropdown');
+
     });
     Route::post('logout', 'Auth\AuthenticatedSessionController@destroy')->name('logout');
 });

@@ -61,12 +61,24 @@ class HomeController extends Controller
     //     return redirect('admin/dashboard');
     // }
 
+    // public function getRiskOptions()
+    // {
+    // $options = InvestmantIdeas::select('risk')->distinct()->get();
+    // $risk_options = [];
+    // foreach ($options as $option) {
+    //     $risk_options[$option->risk] = $option->risk;
+    // }
+    // return view('add_ideas')->with('riskOptions', $riskOptions);
+    // }
+
     public function save(Request $request)
     {
+       // $riskOptions = getRiskOptions();
         $idea = new InvestmantIdeas;
         $idea->investmant_idea = $request->title;
         $idea->created_at = $request->created;
         $idea->updated_at = $request->updated;
+        $idea->content = $request->content;
         $idea->abstract = $request->abstract;
         $idea->product = $request->prod_type;
         $idea->risk= $request->risk;
@@ -116,12 +128,19 @@ class HomeController extends Controller
         return view('admin.edit_ideas')->with('investmantideas', $investmantideas);
     }
 
+    public function view($id)
+    {
+        $investmantideas = InvestmantIdeas::find($id);
+        return view('admin.view_ideas')->with('investmantideas', $investmantideas);
+    }
+
     public function update(Request $request, $id)
 {
     $idea = InvestmantIdeas::find($id);
     $idea->investmant_idea = $request->input('title');
     $idea->created_at = $request->input('created');
-    $idea->updated_at = $request->input('upd_date"');
+    $idea->updated_at = $request->input('updated');
+    $idea->content = $request->input('content');
     $idea->abstract = $request->input('abstract');
     $idea->product = $request->input('prod_type');
     $idea->risk= $request->input('risk');
