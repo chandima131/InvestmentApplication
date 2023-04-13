@@ -50,11 +50,8 @@
                             <p class="font-normal text-gray-700 dark:text-gray-400"><b>Name: </b>{{$clients->name}}</p>
                             <p class="font-normal text-gray-700 dark:text-gray-400"><b>Age: </b>{{$clients->age}}</p>
                             <p class="font-normal text-gray-700 dark:text-gray-400"><b>Risk rate: </b>{{$clients->risk_rate}}</p>
-                            <p class="font-normal text-gray-700 dark:text-gray-400"><b>Gender: </b>Female</p>
-                            <p class="font-normal text-gray-700 dark:text-gray-400"><b>Location: </b>Asia</p>
+                            <p class="font-normal text-gray-700 dark:text-gray-400"><b>Location: </b>{{$clients->address}}</p>
                             <p class="font-normal text-gray-700 dark:text-gray-400"><b>Interest Products: </b>{{$clients->preferred_product}}</p>
-                            <p class="font-normal text-gray-700 dark:text-gray-400"><b>Interest Currency: </b>USD, Euro</p>
-                            <p class="font-normal text-gray-700 dark:text-gray-400"><b>Already Accepted Investment Ideas: </b>Biotech</p>
                         </a>
                         <div class="flex-col flex py-3">
                             <label class="pb-2 text-gray-700 font-semibold">Investment Suggestion </label>
