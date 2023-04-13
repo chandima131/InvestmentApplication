@@ -166,7 +166,7 @@ margin: 30px 0 30px 10px;
 
 .button1 {
   border-radius: 25px;
-  background-color: rgb(83, 125, 181); /* Green */
+  background-color: rgb(83, 125, 181); 
   border: none;
   color: white;
   padding: 8px 16px;
@@ -190,6 +190,30 @@ margin: 30px 0 30px 10px;
   right:35px;
 }
 
+.button3 {
+  border-radius: 25px;
+  background-color: rgb(83, 171, 181); 
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+}
+
+.button4 {
+  border-radius: 25px;
+  background-color: rgb(202, 52, 52); /* Red */
+  border: none;
+  color: white;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 14px;
+}
+
 .add_ideas td{
   border-collapse: separate;
   border-spacing: 0px 15px 15px;
@@ -207,3 +231,12 @@ margin: 30px 0 30px 10px;
   color: white;
   font-weight: 800;
 }
+
+label.error {
+  color: #cc0033;
+  display: inline-block;
+  font-size: 12px;
+  line-height: 15px;
+  margin: 5px 5px 0;
+}
+

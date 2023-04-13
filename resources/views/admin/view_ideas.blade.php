@@ -25,15 +25,7 @@
         </h2>
     </x-slot> -->
 
-<script src="{{ asset('js/vendor.js') }}"></script>
-<script src="{{asset('js/form-validation.js')}}" ></script>
-
-
-
-
-
 <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
-
     <section id="menu">
     <div class="sidebar">
         <section id="menu">
@@ -63,39 +55,38 @@
     </section>
 
     <section id="interface">
-<h3 class="i-name"> &nbsp Add New Idea </h3>
+<h3 class="i-name"> &nbsp View Idea </h3>
 
 <div class= "values">
     <div class="board">
-    <h3> Please Enter Following Details </h3>
-    <form method="POST" id="myForm" action="{{ route('admin.save') }} ">
+    <h3> Detailed View </h3> 
+    <form method="GET" action="{{route('admin.view',$investmantideas->id)}}">
     @csrf
     @method('put')
-    
     <table class="add_ideas">
     <tr>
       <td>Title:</td>
-      <td><input type="text" name="title" id="title" ></td>
+      <td><input type="text" name="title" id="title" value="{{ $investmantideas->investmant_idea}}" disabled></td>
     </tr>
     <tr>
-      <td> Abstract: </td>
-      <td><textarea name="abstract" id="abstract"> </textarea></td>
-      <td> Created At: </td>
-      <td> <input type="date" name="created" id="created"> </td>
-    </tr>
-    <tr>
+      <td>Abstract:</td>
+      <td><textarea name="abstract" id="abstract" disabled> {{$investmantideas->abstract}} </textarea></td>
       <td> Expiry Date: </td>
-      <td> <input type="date" name="exp_date" id="exp_date"> </td>
-      <!-- <td> Updated At: </td> -->
-      <input type="hidden" name="updated" id="updated">
+      <td> <input type="date" name="exp_date" id="exp_date" value="{{ date('Y-m-d', strtotime($investmantideas->expire_at)) }}" disabled> </td>
+    </tr>
+    <tr>
+      <td>Created At:</td>
+      <td><input type="date" name="created" id="created" value="{{ date('Y-m-d', strtotime($investmantideas->created_at)) }}" disabled> </td>
+      <td> Updated At: </td>
+      <td> <input type="date" name="updated" id="upd_date" value="{{ date('Y-m-d', strtotime($investmantideas->updated_at)) }}" disabled> </td>
     </tr>
     <tr>
         <td> Content: </td>
-        <td><textarea name="content" rows="5" cols="40" id="content"> </textarea></td>
+        <td><textarea name="content" rows="5" cols="40" id="content" disabled> {{ $investmantideas->content}}</textarea></td>
     </tr>
     <tr>
         <td> Risk Rating: </td>
-        <td> <select name="risk" id="risk">
+        <td> <select name="risk" id="risk" disabled>
                 <option value="1">1</option>
                 <option value="2">2</option>
                 <option value="3">3</option>
@@ -104,30 +95,30 @@
             </select>
         </td>
         <td> Product Type: </td>
-        <td> <input type="text" name="prod_type" id="prod_type">
+        <td> <input type="text" name="prod_type" id="prod_type" value="{{ $investmantideas-> product}}" disabled>
         </td>
     </tr>
     <tr>
         <td> Instruments: </td>
-        <td> <input type="text" name="instruments" id="instruments"> </td>
+        <td> <input type="text" name="instruments" id="instruments" value="{{ $investmantideas->instruments}}" disabled> </td>
         <td> Currency: </td>
-        <td> <input type="text" name="currency" id="currency"> </td>
+        <td> <input type="text" name="currency" id="currency" value="{{ $investmantideas->Currency}}" disabled> </td>
     </tr>
     <tr>
         <td> Major Sector: </td>
-        <td> <input type="text" name="maj_sector" id="maj_sector"> </td>
+        <td> <input type="text" name="maj_sector" id="maj_sector" value="{{ $investmantideas->Major_Sector}}" disabled> </td>
         <td> Minor Sector: </td>
-        <td> <input type="text" name="min_sector" id="min_sector"> </td>
+        <td> <input type="text" name="min_sector" id="min_sector" value="{{ $investmantideas->Minor_Sector}}" disabled> </td>
     </tr>
     <tr>
         <td> Region: </td>
-        <td> <input type="text" name="region" id="region"> </td>
+        <td> <input type="text" name="region" id="region" value="{{ $investmantideas->Region}}" disabled> </td>
         <td> Country: </td>
-        <td> <input type="text" name="country" id="country"> </td>
+        <td> <input type="text" name="country" id="country" value="{{ $investmantideas->Country}}" disabled> </td>
     </tr>
   </table>
   <br>
-  &nbsp<input type="submit" name="btnSubmit" class ="button1" value="Add Idea">
+  <!-- &nbsp<input type="submit" class ="button1" value="Submit"> -->
 </form>
 
 

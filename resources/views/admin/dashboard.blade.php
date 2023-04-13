@@ -100,8 +100,10 @@
                     <td> {{$row -> risk}} </td>
                     <td> {{$row -> product}} </td>
                     <td> {{$row -> Country}} </td> 
-                    <td> <a href="{{ url('/admin/edit/'.$row->id) }}"> <button div="button3"> Edit </button> </a>
-                         <a href="{{ url('/admin/delete/'.$row->id) }}"> <button div="button4"> Delete </button> </a>
+                    <td>
+                        <a href="{{ url('/admin/view/'.$row->id) }}"> <button class="button1"> View </button> </a> 
+                        <a href="{{ url('/admin/edit/'.$row->id) }}"> <button class="button3"> Edit </button> </a>
+                        <a href="{{ url('/admin/delete/'.$row->id) }}"> <button class="button4"> Delete </button> </a>
                     </td>
                 </tr>
             @endforeach

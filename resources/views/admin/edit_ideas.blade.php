@@ -25,6 +25,9 @@
         </h2>
     </x-slot> -->
 
+<script src="{{ asset('js/vendor.js') }}"></script>
+<script src="{{asset('js/form-validation.js')}}" ></script>
+
 <link rel="stylesheet" href="{{ asset('css/dashboard.css') }}">
     <section id="menu">
     <div class="sidebar">
@@ -55,12 +58,12 @@
     </section>
 
     <section id="interface">
-<h3 class="i-name"> &nbsp Add New Idea </h3>
+<h3 class="i-name"> &nbsp Edit Idea </h3>
 
 <div class= "values">
     <div class="board">
     <h3> Please Enter Following Details </h3> 
-    <form method="POST" action="{{route('admin.update',$investmantideas->id)}}">
+    <form id= "myForm" method="POST" action="{{route('admin.update',$investmantideas->id)}}">
     @csrf
     @method('put')
     <table class="add_ideas">
@@ -76,7 +79,7 @@
     </tr>
     <tr>
       <td>Created At:</td>
-      <td><input type="date" name="created" id="created" value="{{ date('Y-m-d', strtotime($investmantideas->created_at)) }}"> </td>
+      <td><input type="date" name="created" id="created" value="{{ date('Y-m-d', strtotime($investmantideas->created_at)) }}"  > </td>
       <td> Updated At: </td>
       <td> <input type="date" name="updated" id="upd_date" value="{{ date('Y-m-d', strtotime($investmantideas->updated_at)) }}" > </td>
     </tr>
@@ -95,13 +98,7 @@
             </select>
         </td>
         <td> Product Type: </td>
-        <td> <select name="prod_type" id="prod_type">
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
-            </select>
+        <td> <input type="text" name="prod_type" id="prod_type" value="{{ $investmantideas-> product}}">
         </td>
     </tr>
     <tr>

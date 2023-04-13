@@ -16,3 +16,10 @@ mix.js('resources/js/app.js', 'public/js').postCss('resources/css/app.css', 'pub
     require('tailwindcss'),
     require('autoprefixer'),
 ]);
+
+mix.js('resources/js/form-validation.js', 'public/js')
+   .scripts([
+       'node_modules/jquery/dist/jquery.js',
+       'node_modules/jquery-validation/dist/jquery.validate.js',
+   ], 'public/js/vendor.js',
+);
