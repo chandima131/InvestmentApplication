@@ -48,8 +48,8 @@
                                             <x-input id="email" class="block mt-1 w-full" type="text"
                                                 name="email" :value="old('email')" required autofocus />
 
-                                        </div>
-                                        <!-- Email Address -->
+                                        </div> -->
+                                        <!-- Email Address
                                         <div>
                                             <x-label for="address" :value="__('address')" />
                                             <x-input id="address" class="block mt-1 w-full" type="text"
@@ -77,12 +77,12 @@
                                                 name="preferred_product" :value="old('preferred_product')" required autofocus />
 
                                         </div>
-                                        <div>
+                                        <!-- <div>
                                             <x-label for="account_detail" :value="__('account_detail')" />
                                             <x-input id="account_detail" class="block mt-1 w-full" type="text"
                                                 name="account_detail" :value="old('account_detail')" required autofocus />
 
-                                        </div>
+                                        </div> -->
 
                                         <x-button class="mt-3">
                                             {{ __('Update profile') }}

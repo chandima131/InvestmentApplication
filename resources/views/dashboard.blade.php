@@ -94,7 +94,7 @@
                         <tr>
                             <td> Investment Idea </td>
                             <td> Abstract </td>
-                            <td> Risk Rating </td>
+                            <td> Risk Rating Level</td>
                             <td> Product type </td>
                             <td> Major Sector </td>
                             <td> Action </td>
@@ -119,7 +119,7 @@
 
                 </table>
             </div>
-   
+
             {{-- <div class="board">
                 <h3> Accpted Investment Idea </h3>
                 <table width="100%">

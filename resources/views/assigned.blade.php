@@ -46,7 +46,7 @@
     <section id="interface">
         <h3 class="i-name"> &nbsp Client Dashboard </h3>
          <div class="values">
-  
+
 
 
             <div class="board">
@@ -56,7 +56,7 @@
                         <tr>
                             <td> Investment Idea </td>
                             <td> Abstract </td>
-                            <td> Risk Rating </td>
+                            <td> Risk Rating Level</td>
                             <td> Product type </td>
                             <td> Major Sector </td>
                             <td> Status </td>

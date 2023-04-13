@@ -16,10 +16,6 @@
                     <label for="inputEmail4">Investment Idea</label>
                     <input type="text" class="form-control" id="title" placeholder="{{$investmantideas->investmant_idea}}">
                 </div>
-                <div class="form-group col-md-6">
-                    <label for="inputPassword4">Author</label>
-                    <input type="text" class="form-control" id="author" placeholder="{{$investmantideas->author}}">
-                </div>
             </div>
             <div class="form-group">
                 <label for="inputAddress">Abstract</label>
@@ -27,30 +23,30 @@
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
-                    <label for="inputCity">Risk Rating</label>
+                    <label for="inputCity">Risk Rating Level</label>
                     <input type="text" class="form-control" id="risk_rate" placeholder="{{$investmantideas->risk}}">
                 </div>
                 <div class="form-group col-md-4">
                     <label for="inputState">Region</label>
-                    <input type="text" class="form-control" id="region" placeholder="{{$investmantideas->region}}">
+                    <input type="text" class="form-control" id="region" placeholder="{{$investmantideas->Region}}">
                 </div>
                 <div class="form-group col-md-2">
                     <label for="inputZip">Country</label>
-                    <input type="text" class="form-control" id="country" placeholder="{{$investmantideas->country}}">
+                    <input type="text" class="form-control" id="country" placeholder="{{$investmantideas->Country}}">
                 </div>
             </div>
             <div class="form-row">
                 <div class="form-group col-md-6">
                     <label for="inputCity">Currency</label>
-                    <input type="text" class="form-control" id="currancy" placeholder="{{$investmantideas->currency}}">
+                    <input type="text" class="form-control" id="currancy" placeholder="{{$investmantideas->Currency}}">
                 </div>
                 <div class="form-group col-md-4">
                     <label for="inputState">Major Sector</label>
-                    <input type="text" class="form-control" id="major_sector" placeholder="{{$investmantideas->sector}}">
+                    <input type="text" class="form-control" id="major_sector" placeholder="{{$investmantideas->Major_Sector}}">
                 </div>
                 <div class="form-group col-md-2">
                     <label for="inputZip">Minor Sector</label>
-                    <input type="text" class="form-control" id="inor_sector" placeholder="{{$investmantideas->minor_sector}}">
+                    <input type="text" class="form-control" id="inor_sector" placeholder="{{$investmantideas->Minor_Sector}}">
                 </div>
             </div>
 
