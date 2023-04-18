@@ -18,6 +18,7 @@ class InvestmantIdeasController extends RelationshipManagerController
     {
 
         $investmantideas = InvestmantIdeas::select("*")
+            ->where("rm_status", "=", 1)
             ->get();
         // $investmantideas = InvestmantIdeas::paginate(3);
         return view('relationshipmanager.investmantideas.index')->with('investmantideas', $investmantideas);
