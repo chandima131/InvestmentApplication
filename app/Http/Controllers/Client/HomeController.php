@@ -23,7 +23,15 @@ class HomeController extends Controller
              ->get();
         return view('dashboard')->with('ideas',$ideas);
     }
+    public function rms()
+    {
 
+        $clients = DB::table('relationship_managers')
+             ->select('relationship_managers.*')
+            ->get();
+       return  view('expolre')->with('relationship_managers', $clients);
+
+     }
     public function assigned()
     {
         $where=[];
@@ -43,7 +51,14 @@ class HomeController extends Controller
 
         return view('relationshipmanager.edit')->with('clients', $clients)->with('investmantideas', $investmantideas);
     }
-
+    public function profile()
+    {
+        
+        $clients = optional( Clients::where('client_id', Auth::user()->id))->first();
+ 
+        return view('profile')->with('profile', $clients);
+    }
+    
     public function update($id,$status)
     {
         $where = [];
@@ -55,5 +70,24 @@ class HomeController extends Controller
             ->update($updateData);
          return redirect('dashboard');
     }
+
+    public function Register_update(Request $request, $id)
+    {
+        $user = Clients::where('client_id', Auth::user()->id)->first();
+        if($user) {
+            $where[] = ['clients.client_id', '=',  Auth::user()->id];
+            $updateData = $request->except('_token');
+            $blog = DB::table('clients')
+                ->where($where)
+                ->update($updateData);
+        }else{
+        
+            $input = $request->all();
+            $input['client_id'] = Auth::user()->id;
+            
+                $blog =  Clients::create($input);
+         }
+         return redirect('dashboard');
+     }
  
 }

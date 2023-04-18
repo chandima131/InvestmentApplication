@@ -24,9 +24,7 @@ Route::get('/register', function () {
 //     return view('dashboard');
 // })->middleware(['auth'])->name('dashboard');
 
-Route::get('/profile', function () {
-    return view('admin.layouts.profile');
-});
+
 
 Route::get('/aboutus', function () {
     return view('aboutus');
@@ -39,8 +37,11 @@ Route::namespace('Client')->group(function () {
 Route::middleware('auth')->group(function () {
     Route::get('dashboard', 'HomeController@index')->name('dashboard');
     Route::get('assigned', 'HomeController@assigned')->name('assigned');
-
     Route::get('edit/{assign_id}/{status}', 'HomeController@update')->name('edit');
+    Route::post('client_Register_update/{client_id}','HomeController@Register_update')->name('client_Register_update');
+    Route::get('/profile','HomeController@profile')->name('profile');
+    Route::get('/explore','HomeController@rms')->name('explore');;
+
 
 });
 });
