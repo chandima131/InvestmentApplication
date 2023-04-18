@@ -33,7 +33,25 @@ height:100%;
     border-left: 4px solid #fff;
 } */
 
+p { color: #f8f8f8; font-family: 'Raleway',sans-serif; 
+color: rgb(1, 6, 13);
+font-size: 18px; font-weight: 500; line-height: 32px; margin: 0 0 24px; }
 
+#team-section {
+  display: flex;
+  justify-content: center;
+}
+
+.team-member {
+  text-align: center;
+  margin: 20px;
+}
+
+.team-member img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
 
 #menu .items li svg{
     display: flex;
@@ -251,3 +269,16 @@ label.error {
   margin: 5px 5px 0;
 }
 
+.logo{
+display: block;
+margin-left: auto;
+margin-right: auto;
+margin-bottom: auto;
+padding-bottom: 180px;
+position: absolute;
+}
+
+.info{
+display: block;
+margin-top: auto;
+}

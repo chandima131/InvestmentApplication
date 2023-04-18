@@ -77,7 +77,7 @@ class HomeController extends Controller
         $idea = new InvestmantIdeas;
         $idea->investmant_idea = $request->title;
         $idea->created_at = $request->created;
-        $idea->updated_at = $request->updated;
+        //$idea->updated_at = $request->updated;
         $idea->content = $request->content;
         $idea->abstract = $request->abstract;
         $idea->product = $request->prod_type;
@@ -138,7 +138,7 @@ class HomeController extends Controller
 {
     $idea = InvestmantIdeas::find($id);
     $idea->investmant_idea = $request->input('title');
-    $idea->created_at = $request->input('created');
+    //$idea->created_at = $request->input('created');
     $idea->updated_at = $request->input('updated');
     $idea->content = $request->input('content');
     $idea->abstract = $request->input('abstract');
