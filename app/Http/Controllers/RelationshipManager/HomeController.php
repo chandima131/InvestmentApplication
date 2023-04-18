@@ -85,7 +85,7 @@ class HomeController extends Controller
             "investmant_idea_id"=>$request->id
         ]
         );
-        return redirect('relationshipmanager/dashboard')->with('Success', 'Successfully Suggested the Investment Idea');;
+        return redirect('relationshipmanager/dashboard')->with('Success', 'Successfully Suggested the Investment Idea');
     }
 
     public function delete($id)

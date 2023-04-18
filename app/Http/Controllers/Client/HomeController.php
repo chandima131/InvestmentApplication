@@ -15,6 +15,7 @@ class HomeController extends Controller
     {
         $where=[];
         $where[]=['assign.status','=',0];
+        $where[]=['assign.client_id',Auth::user()->id];
         $ideas = DB::table('assign')
         ->join('clients', 'assign.client_id', '=', 'clients.client_id') // joining the contacts table , where user_id and contact_user_id are same
             ->join('investmant_ideas_tables', 'assign.investmant_idea_id', '=', 'investmant_ideas_tables.id')
@@ -36,12 +37,13 @@ class HomeController extends Controller
     {
         $where=[];
         $where[]=['assign.status','=',1];
+        $where[]=['assign.client_id',Auth::user()->id];
         $ideas = DB::table('assign')
         ->join('clients', 'assign.client_id', '=', 'clients.client_id') // joining the contacts table , where user_id and contact_user_id are same
             ->join('investmant_ideas_tables', 'assign.investmant_idea_id', '=', 'investmant_ideas_tables.id')
             ->where($where)
              ->get();
-        return view('assigned')->with('ideas',$ideas);    
+        return view('assigned')->with('ideas',$ideas);
     }
 
     public function edit($id)
@@ -53,12 +55,12 @@ class HomeController extends Controller
     }
     public function profile()
     {
-        
+
         $clients = optional( Clients::where('client_id', Auth::user()->id))->first();
- 
+
         return view('profile')->with('profile', $clients);
     }
-    
+
     public function update($id,$status)
     {
         $where = [];
@@ -81,13 +83,13 @@ class HomeController extends Controller
                 ->where($where)
                 ->update($updateData);
         }else{
-        
+
             $input = $request->all();
             $input['client_id'] = Auth::user()->id;
-            
+
                 $blog =  Clients::create($input);
          }
          return redirect('dashboard');
      }
- 
+
 }
