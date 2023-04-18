@@ -343,7 +343,12 @@ ul {
   margin: 0;
   padding: 0;
 }
-
+.oiii{
+  width:200px
+}
+.nameh1{
+  text-align: center;
+}
 /**
  * Tailwind custom reset styles
  */
