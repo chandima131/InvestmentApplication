@@ -28,8 +28,8 @@ class InvestmantIdeasController extends RelationshipManagerController
         $search_text = $_GET['query'];
 
         $investmantideas = InvestmantIdeas::where('investmant_idea', 'LIKE', '%' . $search_text . '%')->orWhere('risk', 'LIKE', '%' . $search_text . '%')
-            ->orWhere('product', 'LIKE', '%' . $search_text . '%')->orWhere('sector', 'LIKE', '%' . $search_text . '%')->get();
-            
+            ->orWhere('product', 'LIKE', '%' . $search_text . '%')->orWhere('Major_Sector', 'LIKE', '%' . $search_text . '%')->orWhere('Minor_Sector', 'LIKE', '%' . $search_text . '%')->get();
+
         return view('relationshipmanager.investmantideas.search')->with('investmantideas', $investmantideas);
     }
 

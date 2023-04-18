@@ -23,6 +23,11 @@ class CreateInvestmantIdeasTables extends Migration
             $table->integer('rm_status');
             $table->date('date');
             $table->string('instruments');
+            $table->string('Currency');
+            $table->string('Major_Sector');
+            $table->string('Minor_Sector');
+            $table->string('Region');
+            $table->string('Country');
         });
     }
 

@@ -1,18 +1,193 @@
-<link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
-<script src="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-<!------ Include the above in your HEAD tag ---------->
+<!DOCTYPE html>
+<html>
+<head>
+  <title>About Us</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+  <header>
+    <img src="http://127.0.0.1:8000/images/logo.png" alt="Brix">
+    <h1>About Us</h1>
+    <p>Investing in Your Future</p>
+  </header>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="portfolio.html">Portfolio</a></li>
+      <li><a href="about.html" class="active">About Us</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
+  <main>
+    <section id="about-section">
+      <h2>Our Story</h2>
+      <p>Welcome to our website! We are a group of four enthusiastic students pursuing our Masters in Computer Application at Anglia Ruskin University in Cambridge. As part of our course on Advanced Web Solution, we have come together to create this website with the aim of showcasing our technical skills, creativity, and passion for web development. With a keen eye for detail and a collaborative approach, we have worked tirelessly to bring our vision to life. We hope you enjoy exploring our website and appreciate the effort we have put into designing and building it. Thank you for visiting and supporting our work!</p>
+      <p></p>
+      <p>We have created this platform with the aim of providing valuable suggestions and insights on stock and crypto trading to our users. Whether you are a beginner looking for guidance or an experienced trader seeking new ideas, our website is here to help. Our team of experts researches and analyzes market trends, news, and data to provide up-to-date information and recommendations. In addition to trading tips, we also encourage content creators to share their knowledge through articles, making them accessible to our clients. We are dedicated to providing a user-friendly experience and a reliable source of information for investors of all levels. Thank you for visiting our website and trusting us with your investment journey!</p>
+    </section>
+    <section id="team-section">
+      <h2>Our Team</h2>
+      <div class="team-member">
+        <img src="https://tse4.mm.bing.net/th?id=OIP.c_owsJjZC6YtPfAUhxPJ9gHaIB&pid=Api&P=0" alt="Vinayak">
+        <h3>Vinayak</h3>
+        <ul class="social-icons">
+          <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+          <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+          <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+        </ul>
+      </div>
+      <div class="team-member">
+        <img src="https://tse3.mm.bing.net/th?id=OIP.LohCmlsAoU2gLEs6-IHovAHaHa&pid=Api&P=0" alt="Chandima">
+        <h3>Chandima</h3>
+        <ul class="social-icons">
+            <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+            <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+        </ul>
+      </div>
+      <div class="team-member">
+        <img src="https://tse4.mm.bing.net/th?id=OIP.fm6aEAVBgHWqxykc--WQ5gHaFj&pid=Api&P=0" alt="Riya">
+        <h3>Riya</h3>
+        <ul class="social-icons">
+          <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+          <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+          <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+        </ul>
+      </div>
+      <div class="team-member">
+        <img src="https://tse4.mm.bing.net/th?id=OIP.9AmvYdOWI4RrUtAkwroCHQHaEU&pid=Api&P=0" alt="Lokesh">
+        <h3>Lokesh</h3>
+        <ul class="social-icons">
+          <li><a href="#"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+          <li><a href="#"><i class="fa fa-twitter" aria-hidden="true"></i></a></li>
+          <li><a href="#"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+        </ul>
+      </div>
+    </section>
+  </main>
+  <footer>
+    <p>Contact us at: <a href="mailto:info@investmentapp.com">info@investmentapp.com</a></p>
+  </footer>
+</body>
+</html>
+<style>
+/* Reset default margin and padding */
+body, h1, h2, h3, p {
+  margin: 0;
+  padding: 0;
+}
 
-<section id="interface">
-        <h3 class="i-name"> &nbsp About US </h3>
+/* Set body font and background */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
+  color: #333;
+}
 
-<div class="page-content">
-    <div class="block-title">Welcome to Framework7</div>
-    <div class="block block-strong">
-      <p>Framework7 - is a free and open source HTML mobile framework to develop hybrid mobile apps or web apps with iOS or Android (Material) native look and feel. It is also an indispensable prototyping apps tool to show working app prototype as soon as possible in case you need to. Framework7 is created by Vladimir Kharlampidi (iDangero.us).</p>
-      <p>The main approach of the Framework7 is to give you an opportunity to create iOS and Android (Material) apps with HTML, CSS and JavaScript easily and clear. Framework7 is full of freedom. It doesn't limit your imagination or offer ways of any solutions somehow. Framework7 gives you freedom!</p>
-      <p>Framework7 is not compatible with all platforms. It is focused only on iOS and Android (Material) to bring the best experience and simplicity.</p>
-      <p>Framework7 is definitely for you if you decide to build iOS and Android hybrid app (Cordova or PhoneGap) or web app that looks like and feels as great native iOS or Android (Material) apps.</p>
-    </div>
-  </div>
-</section>
+/* Header styles */
+header {
+  background-color: #222;
+  text-align: center;
+  padding: 80px 0;
+}
+
+header h1 {
+  font-size: 36px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+header p {
+  font-size: 18px;
+  color: #ffcccb;
+}
+
+/* Navigation styles */
+nav {
+  background-color: #444;
+  padding: 10px;
+}
+
+nav ul {
+  list-style-type: none;
+  display: flex;
+  justify-content: center;
+}
+
+nav ul li {
+  margin: 0 10px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  padding: 5px;
+}
+
+nav ul li a:hover {
+  color: #ffcccb;
+}
+
+/* Main content styles */
+main {
+  margin: 20px;
+}
+
+#about-section {
+  margin-bottom: 40px;
+}
+
+#team-section {
+  display: flex;
+  justify-content: center;
+}
+
+.team-member {
+  text-align: center;
+  margin: 20px;
+}
+
+.team-member img {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+}
+
+.social-icons {
+  display: flex;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+.social-icons li {
+  margin: 0 5px;
+}
+
+.social-icons li a {
+  color: #666;
+  text-decoration: none;
+  font-size: 24px;
+}
+
+.social-icons li a:hover {
+  color: #ffcccb;
+}
+
+/* Footer styles */
+footer {
+  background-color: #222;
+  color: #fff;
+  text-align: center;
+  padding: 10px;
+}
+
+footer a {
+  color: #ffcccb;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #fff;
+}
+</style>
