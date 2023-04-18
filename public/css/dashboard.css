@@ -1,9 +1,18 @@
 #menu .sidebar{
 background-color: #111827;
 color:#fff;
-height:100vh;
+height:120vh;
 float:left;
 width: 20%;
+position: relative;
+display: flex;
+flex-flow: column;
+}
+
+html,body
+{
+margin:0px;
+height:100%;
 }
 
 #menu .items{
@@ -20,9 +29,11 @@ width: 20%;
     cursor: pointer;
 }
 
-#menu .items li:nth-child(1){
+/* #menu .items li:nth-child(1){
     border-left: 4px solid #fff;
-}
+} */
+
+
 
 #menu .items li svg{
     display: flex;
