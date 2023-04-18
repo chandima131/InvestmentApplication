@@ -16,7 +16,7 @@
 
                                 </div>
                                 <div class="flex items-center justify-center  ">
-                                    <div class="rounded-full">
+                                    <div class="rounded-full oiii">
                                         <img src={{ asset('images/so.jpg') }} alt="Your image description"
                                             class=" imground rounded-full">
                                     </div>
@@ -77,12 +77,7 @@
                                                 name="preferred_product" :value="old('preferred_product')" required autofocus />
 
                                         </div>
-                                        <div>
-                                            <x-label for="account_detail" :value="__('account_detail')" />
-                                            <x-input id="account_detail" class="block mt-1 w-full" type="text"
-                                                name="account_detail" :value="old('account_detail')" required autofocus />
-
-                                        </div>
+                
 
                                         <x-button class="mt-3">
                                             {{ __('Update profile') }}
