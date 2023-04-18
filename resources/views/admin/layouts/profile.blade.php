@@ -49,7 +49,6 @@
                                                 name="email" :value="old('email')" required autofocus />
 
                                         </div>
-                                         Email Address
                                         <div>
                                             <x-label for="address" :value="__('address')" />
                                             <x-input id="address" class="block mt-1 w-full" type="text"
@@ -63,14 +62,18 @@
                                                 name="age" :value="old('age')" required autofocus />
 
                                         </div>
-                                        <div>
+                                        <div class="transititext-primary" data-te-toggle="tooltip"
+                                         title="You can rank Risk using different levels, such as level 1 and level 2....">
+
                                             <x-label for="risk_rate" :value="__('risk_rate')" />
+
 
                                             <x-input id="risk_rate" class="block mt-1 w-full" type="text"
                                                 name="risk_rate" :value="old('risk_rate')" required autofocus />
 
                                         </div>
-                                        <div>
+                                        <div   class="transititext-primary" data-te-toggle="tooltip"
+                                         title="Add interested product type such as Equity, Structured Products">
                                             <x-label for="preferred_product" :value="__('preferred_product')" />
 
                                             <x-input id="preferred_product" class="block mt-1 w-full" type="text"
