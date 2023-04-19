@@ -127,7 +127,7 @@
     </tr>
   </table>
   <br>
-  &nbsp<input type="submit" name="btnSubmit" class ="button1" value="Add Idea">
+  &nbsp<input type="submit" name="btnSubmit" class ="button1" value="Send Idea to RM">
 </form>
 
 
