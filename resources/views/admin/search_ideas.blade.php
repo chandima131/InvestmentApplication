@@ -56,7 +56,7 @@
     </form>
 
     &nbsp; &nbsp;
-    <a href="{{ url('/admin/add_ideas')}}"><button class="button2"> Add New Idea </button> </a>
+    <!-- <a href="{{ url('/admin/add_ideas')}}"><button class="button2"> Add New Idea </button> </a> -->
     </div>
         <table width="100%">
             <thead>

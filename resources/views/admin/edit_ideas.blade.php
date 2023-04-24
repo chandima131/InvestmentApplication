@@ -81,8 +81,8 @@
     <tr>
       <!-- <td>Created At:</td>
       <td><input type="date" name="created" id="created" value="{{ date('Y-m-d', strtotime($investmantideas->created_at)) }}"  > </td> -->
-      <td> Updated At: </td>
-      <td> <input type="date" name="updated" id="upd_date" value="{{ date('Y-m-d', strtotime($investmantideas->updated_at)) }}" > </td>
+      <!-- <td> Updated At: </td> -->
+       <input type="date" name="updated" id="upd_date" value="{{ date('Y-m-d', strtotime($investmantideas->updated_at)) }}" hidden> 
       <td> Expiry Date: </td>
       <td> <input type="date" name="exp_date" id="exp_date" value="{{ date('Y-m-d', strtotime($investmantideas->expire_at)) }}"> </td>
     </tr>

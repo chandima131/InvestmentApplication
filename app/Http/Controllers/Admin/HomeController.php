@@ -39,12 +39,14 @@ class HomeController extends Controller
         abort(403);
     }
 
+    
     public function add_ideas()
     {
         // dd(\Auth::guard('admin')->user()->hasRole('editor'));
         return view('admin.add_ideas');
     }
 
+    //This function will display the list of all ideas
     public function ideas()
     {
 
@@ -71,13 +73,14 @@ class HomeController extends Controller
     // return view('add_ideas')->with('riskOptions', $riskOptions);
     // }
 
+
+    //This function saves the data entered via the form 
+    //on Add New Ideas view.
     public function save(Request $request)
     {
-       // $riskOptions = getRiskOptions();
         $idea = new InvestmantIdeas;
         $idea->investmant_idea = $request->title;
         $idea->created_at = $request->created;
-        //$idea->updated_at = $request->updated;
         $idea->content = $request->content;
         $idea->abstract = $request->abstract;
         $idea->product = $request->prod_type;
@@ -93,16 +96,23 @@ class HomeController extends Controller
         return redirect('admin/dashboard');
     }
 
+
+    //this function is used to enable search functionality in
+    //Admin dashboard. It looks through all investment ideas.
     public function search(Request $request)
     {
         $search_text = $_GET['query'];
 
-        $investmantideas = InvestmantIdeas::where('investmant_idea', 'LIKE', '%' . $search_text . '%')->orWhere('risk', 'LIKE', '%' . $search_text . '%')
+        $investmantideas = InvestmantIdeas::where('investmant_idea', 'LIKE', '%' . $search_text . '%')
+            ->orWhere('risk', 'LIKE', '%' . $search_text . '%')
             ->orWhere('product', 'LIKE', '%' . $search_text . '%')->get();
             
         return view('admin.search_ideas')->with('investmantideas', $investmantideas);
     }
 
+
+    //this function is used to enable delete functionality in
+    //Admin dashboard. It allows deletion of record of specified id.
     public function delete($id)
     {
         $count_before = DB::table('investmant_ideas_tables')->count();
@@ -122,22 +132,28 @@ class HomeController extends Controller
     //     return view('admin.edit_ideas', compact('idea'));
     // }   
 
+    //This function retrieves the values from database to display them
+    //on the 'Edit Ideas' page so they can be modified.
      public function edit($id)
     {
         $investmantideas = InvestmantIdeas::find($id);
         return view('admin.edit_ideas')->with('investmantideas', $investmantideas);
     }
 
+    //This function is used to retrieve data from database and view
+    //it via a form on 'View Ideas' page.
     public function view($id)
     {
         $investmantideas = InvestmantIdeas::find($id);
         return view('admin.view_ideas')->with('investmantideas', $investmantideas);
     }
 
+    //This function is used to update the records in the database after modifications
+    //on 'Edit Ideas' page.
     public function update(Request $request, $id)
 {
     $idea = InvestmantIdeas::find($id);
-    $idea->investmant_idea = $request->input('title');
+    $idea->investmant_idea = $request->input('title'); 
     //$idea->created_at = $request->input('created');
     $idea->updated_at = $request->input('updated');
     $idea->content = $request->input('content');
@@ -151,10 +167,7 @@ class HomeController extends Controller
     $idea->Minor_Sector = $request->input('min_sector');
     $idea->Region = $request->input('region');
     $idea->Country = $request->input('country');
-
-    //$idea->fill($request->all());
     $idea->save();
-
     return redirect('admin/dashboard')->with('update', 'Record Successfully Updated');
 }
 
